@@ -4,7 +4,7 @@ import SwiftUI
 
 struct AimlessDriveList: View {
   @Environment(\.modelContext) private var modelContext
-  @Query private var drives: [AimlessDrive]
+  @Query(sort: \AimlessDrive.endTime, order: .reverse) private var drives: [AimlessDrive]
 
   var body: some View {
     NavigationSplitView {
@@ -13,7 +13,9 @@ struct AimlessDriveList: View {
           NavigationLink {
             AimlessDriveDetailView(aimlessDrive: drive)
           } label: {
-            Text("\(drive.name) completed on \(drive.endTime.formatted(date: .abbreviated, time: .shortened))")
+            Text(
+              "\(drive.name) completed on \(drive.endTime.formatted(date: .abbreviated, time: .shortened))"
+            )
           }
         }
         .onDelete(perform: deleteItems)
@@ -27,7 +29,6 @@ struct AimlessDriveList: View {
       Text("Select an item")
     }
   }
-
 
   private func deleteItems(offsets: IndexSet) {
     withAnimation {

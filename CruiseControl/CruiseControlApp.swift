@@ -5,7 +5,8 @@ import SwiftUI
 struct CruiseControlApp: App {
   var sharedModelContainer: ModelContainer = {
     let schema = Schema([
-      AimlessDrive.self
+      AimlessDrive.self,
+      LocationName.self,
     ])
     let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
