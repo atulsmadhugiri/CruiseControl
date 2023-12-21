@@ -1,20 +1,30 @@
+import CoreLocation
 import SwiftData
 import SwiftUI
 
 struct ContentView: View {
   @Environment(\.modelContext) private var modelContext
-  @Query private var items: [Item]
+  @Query private var drives: [AimlessDrive]
 
   var body: some View {
     NavigationSplitView {
       List {
-        ForEach(items) { item in
+        ForEach(drives) { item in
           NavigationLink {
             Text(
-              "Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))"
+              "Start Time: \(item.startTime, format: Date.FormatStyle(date: .numeric, time: .standard))"
+            )
+            Text(
+              "End Time: \(item.endTime, format: Date.FormatStyle(date: .numeric, time: .standard))"
+            )
+            Text(
+              "Start Location: \(item.startLocation.latitude.description), \(item.startLocation.longitude.description)"
+            )
+            Text(
+              "End Location: \(item.endLocation.latitude.description), \(item.endLocation.longitude.description)"
             )
           } label: {
-            Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+            Text("Drive completed at \(item.endTime)")
           }
         }
         .onDelete(perform: deleteItems)
@@ -36,7 +46,10 @@ struct ContentView: View {
 
   private func addItem() {
     withAnimation {
-      let newItem = Item(timestamp: Date())
+      let newItem = AimlessDrive(
+        startTime: Date(), endTime: Date(),
+        startLocation: CLLocationCoordinate2D(latitude: 47.62732, longitude: 122.06952),
+        endLocation: CLLocationCoordinate2D(latitude: 47.62732, longitude: 122.06952), route: [])
       modelContext.insert(newItem)
     }
   }
@@ -44,7 +57,7 @@ struct ContentView: View {
   private func deleteItems(offsets: IndexSet) {
     withAnimation {
       for index in offsets {
-        modelContext.delete(items[index])
+        modelContext.delete(drives[index])
       }
     }
   }
@@ -52,5 +65,5 @@ struct ContentView: View {
 
 #Preview {
   ContentView()
-    .modelContainer(for: Item.self, inMemory: true)
+    .modelContainer(for: AimlessDrive.self, inMemory: true)
 }
