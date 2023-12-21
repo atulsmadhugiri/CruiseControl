@@ -3,9 +3,10 @@ import SwiftUI
 
 struct AimlessDriveDetailView: View {
   var aimlessDrive: AimlessDrive
+  let stroke = StrokeStyle(lineWidth: 6, lineCap: .round, lineJoin: .round)
   var body: some View {
     Map {
-      MapPolyline(coordinates: aimlessDrive.route).stroke(.blue, lineWidth: 10)
+      MapPolyline(coordinates: aimlessDrive.route).stroke(.blue, style: stroke)
       if let startingLocation = aimlessDrive.route.first {
         Annotation("Start", coordinate: startingLocation, anchor: .bottom) {
           Image(systemName: "flag.fill")

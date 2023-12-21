@@ -11,10 +11,11 @@ struct RecordDrive: View {
 
   @State private var driveName = ""
 
+  let stroke = StrokeStyle(lineWidth: 6, lineCap: .round, lineJoin: .round)
   var body: some View {
     Map {
       if !locationFetcher.route.isEmpty {
-        MapPolyline(coordinates: locationFetcher.route).stroke(.blue, lineWidth: 10)
+        MapPolyline(coordinates: locationFetcher.route).stroke(.blue, style: stroke)
       }
       UserAnnotation()
     }.safeAreaInset(edge: .bottom) {
