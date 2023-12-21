@@ -1,6 +1,6 @@
 import CoreLocation
 
-struct PlacemarkData {
+struct PlacemarkData: Codable {
   var areasOfInterest: [String]?
   var locality: String?
   var subLocality: String?

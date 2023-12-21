@@ -6,7 +6,7 @@ struct CruiseControlApp: App {
   var sharedModelContainer: ModelContainer = {
     let schema = Schema([
       AimlessDrive.self,
-      LocationName.self,
+      CoordinatePlacemarkData.self,
     ])
     let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
