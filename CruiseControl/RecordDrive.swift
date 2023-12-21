@@ -13,7 +13,9 @@ struct RecordDrive: View {
 
   var body: some View {
     Map {
-      MapPolyline(coordinates: locationFetcher.route).stroke(.blue, lineWidth: 10)
+      if !locationFetcher.route.isEmpty {
+        MapPolyline(coordinates: locationFetcher.route).stroke(.blue, lineWidth: 10)
+      }
       UserAnnotation()
     }.safeAreaInset(edge: .bottom) {
       HStack {
