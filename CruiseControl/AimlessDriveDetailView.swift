@@ -5,6 +5,7 @@ struct AimlessDriveDetailView: View {
   var aimlessDrive: AimlessDrive
   var body: some View {
     Map {
+      MapPolyline(coordinates: aimlessDrive.route).stroke(.blue, lineWidth: 10)
       if let startingLocation = aimlessDrive.route.first {
         Annotation("Start", coordinate: startingLocation, anchor: .bottom) {
           Image(systemName: "flag.fill")
