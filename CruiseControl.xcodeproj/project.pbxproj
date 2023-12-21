@@ -13,7 +13,7 @@
 		B72FD0F32B3434020061B368 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72FD0F22B3434020061B368 /* RootView.swift */; };
 		B771B0132B3415FC00C6623F /* AimlessDrive.swift in Sources */ = {isa = PBXBuildFile; fileRef = B771B0122B3415FC00C6623F /* AimlessDrive.swift */; };
 		B7FFC3392B34151500F0BC27 /* CruiseControlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FFC3382B34151500F0BC27 /* CruiseControlApp.swift */; };
-		B7FFC33B2B34151500F0BC27 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FFC33A2B34151500F0BC27 /* ContentView.swift */; };
+		B7FFC33B2B34151500F0BC27 /* AimlessDriveList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FFC33A2B34151500F0BC27 /* AimlessDriveList.swift */; };
 		B7FFC33F2B34151600F0BC27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7FFC33E2B34151600F0BC27 /* Assets.xcassets */; };
 		B7FFC3422B34151600F0BC27 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7FFC3412B34151600F0BC27 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -26,7 +26,7 @@
 		B771B0122B3415FC00C6623F /* AimlessDrive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AimlessDrive.swift; sourceTree = "<group>"; };
 		B7FFC3352B34151500F0BC27 /* CruiseControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CruiseControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7FFC3382B34151500F0BC27 /* CruiseControlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CruiseControlApp.swift; sourceTree = "<group>"; };
-		B7FFC33A2B34151500F0BC27 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B7FFC33A2B34151500F0BC27 /* AimlessDriveList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AimlessDriveList.swift; sourceTree = "<group>"; };
 		B7FFC33E2B34151600F0BC27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B7FFC3412B34151600F0BC27 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B7FFC3432B34151600F0BC27 /* CruiseControl.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CruiseControl.entitlements; sourceTree = "<group>"; };
@@ -64,12 +64,12 @@
 			isa = PBXGroup;
 			children = (
 				B7FFC3382B34151500F0BC27 /* CruiseControlApp.swift */,
-				B7FFC33A2B34151500F0BC27 /* ContentView.swift */,
 				B7FFC33E2B34151600F0BC27 /* Assets.xcassets */,
 				B7FFC3432B34151600F0BC27 /* CruiseControl.entitlements */,
 				B7FFC3442B34151600F0BC27 /* Info.plist */,
 				B7FFC3402B34151600F0BC27 /* Preview Content */,
 				B771B0122B3415FC00C6623F /* AimlessDrive.swift */,
+				B7FFC33A2B34151500F0BC27 /* AimlessDriveList.swift */,
 				B72FD0EA2B341EBC0061B368 /* AimlessDriveDetailView.swift */,
 				B72FD0EE2B342E170061B368 /* LocationFetcher.swift */,
 				B72FD0F02B3432D00061B368 /* RecordDrive.swift */,
@@ -156,7 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B7FFC33B2B34151500F0BC27 /* ContentView.swift in Sources */,
+				B7FFC33B2B34151500F0BC27 /* AimlessDriveList.swift in Sources */,
 				B72FD0EB2B341EBC0061B368 /* AimlessDriveDetailView.swift in Sources */,
 				B72FD0EF2B342E170061B368 /* LocationFetcher.swift in Sources */,
 				B771B0132B3415FC00C6623F /* AimlessDrive.swift in Sources */,

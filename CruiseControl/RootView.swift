@@ -6,7 +6,7 @@ struct RootView: View {
       RecordDrive().tabItem {
         Label("Record", systemImage: "steeringwheel")
       }
-      ContentView().tabItem {
+      AimlessDriveList().tabItem {
         Label("Drives", systemImage: "map")
       }
     }

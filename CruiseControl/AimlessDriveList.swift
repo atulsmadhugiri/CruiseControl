@@ -2,7 +2,7 @@ import CoreLocation
 import SwiftData
 import SwiftUI
 
-struct ContentView: View {
+struct AimlessDriveList: View {
   @Environment(\.modelContext) private var modelContext
   @Query private var drives: [AimlessDrive]
 
@@ -39,6 +39,6 @@ struct ContentView: View {
 }
 
 #Preview {
-  ContentView()
+  AimlessDriveList()
     .modelContainer(for: AimlessDrive.self, inMemory: true)
 }
