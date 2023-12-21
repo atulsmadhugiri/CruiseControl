@@ -13,7 +13,7 @@ struct ContentView: View {
           NavigationLink {
             AimlessDriveDetailView(aimlessDrive: drive)
           } label: {
-            Text("Drive completed at \(drive.endTime)")
+            Text("\(drive.name) completed at \(drive.endTime.formatted(date: .omitted, time: .shortened))")
           }
         }
         .onDelete(perform: deleteItems)
@@ -22,25 +22,12 @@ struct ContentView: View {
         ToolbarItem(placement: .navigationBarTrailing) {
           EditButton()
         }
-        ToolbarItem {
-          Button(action: addItem) {
-            Label("Add Item", systemImage: "plus")
-          }
-        }
       }
     } detail: {
       Text("Select an item")
     }
   }
 
-  private func addItem() {
-    withAnimation {
-      let newItem = AimlessDrive(
-        name: "",
-        startTime: Date(), endTime: Date(), route: [])
-      modelContext.insert(newItem)
-    }
-  }
 
   private func deleteItems(offsets: IndexSet) {
     withAnimation {
