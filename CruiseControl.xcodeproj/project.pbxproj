@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		B72FD0EB2B341EBC0061B368 /* AimlessDriveDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72FD0EA2B341EBC0061B368 /* AimlessDriveDetailView.swift */; };
+		B72FD0EF2B342E170061B368 /* LocationFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72FD0EE2B342E170061B368 /* LocationFetcher.swift */; };
+		B72FD0F12B3432D00061B368 /* RecordDrive.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72FD0F02B3432D00061B368 /* RecordDrive.swift */; };
+		B72FD0F32B3434020061B368 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72FD0F22B3434020061B368 /* RootView.swift */; };
 		B771B0132B3415FC00C6623F /* AimlessDrive.swift in Sources */ = {isa = PBXBuildFile; fileRef = B771B0122B3415FC00C6623F /* AimlessDrive.swift */; };
 		B7FFC3392B34151500F0BC27 /* CruiseControlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FFC3382B34151500F0BC27 /* CruiseControlApp.swift */; };
 		B7FFC33B2B34151500F0BC27 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FFC33A2B34151500F0BC27 /* ContentView.swift */; };
@@ -17,6 +20,9 @@
 
 /* Begin PBXFileReference section */
 		B72FD0EA2B341EBC0061B368 /* AimlessDriveDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AimlessDriveDetailView.swift; sourceTree = "<group>"; };
+		B72FD0EE2B342E170061B368 /* LocationFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcher.swift; sourceTree = "<group>"; };
+		B72FD0F02B3432D00061B368 /* RecordDrive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDrive.swift; sourceTree = "<group>"; };
+		B72FD0F22B3434020061B368 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		B771B0122B3415FC00C6623F /* AimlessDrive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AimlessDrive.swift; sourceTree = "<group>"; };
 		B7FFC3352B34151500F0BC27 /* CruiseControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CruiseControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7FFC3382B34151500F0BC27 /* CruiseControlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CruiseControlApp.swift; sourceTree = "<group>"; };
@@ -65,6 +71,9 @@
 				B7FFC3402B34151600F0BC27 /* Preview Content */,
 				B771B0122B3415FC00C6623F /* AimlessDrive.swift */,
 				B72FD0EA2B341EBC0061B368 /* AimlessDriveDetailView.swift */,
+				B72FD0EE2B342E170061B368 /* LocationFetcher.swift */,
+				B72FD0F02B3432D00061B368 /* RecordDrive.swift */,
+				B72FD0F22B3434020061B368 /* RootView.swift */,
 			);
 			path = CruiseControl;
 			sourceTree = "<group>";
@@ -149,8 +158,11 @@
 			files = (
 				B7FFC33B2B34151500F0BC27 /* ContentView.swift in Sources */,
 				B72FD0EB2B341EBC0061B368 /* AimlessDriveDetailView.swift in Sources */,
+				B72FD0EF2B342E170061B368 /* LocationFetcher.swift in Sources */,
 				B771B0132B3415FC00C6623F /* AimlessDrive.swift in Sources */,
+				B72FD0F32B3434020061B368 /* RootView.swift in Sources */,
 				B7FFC3392B34151500F0BC27 /* CruiseControlApp.swift in Sources */,
+				B72FD0F12B3432D00061B368 /* RecordDrive.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
