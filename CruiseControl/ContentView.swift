@@ -37,8 +37,8 @@ struct ContentView: View {
     withAnimation {
       let newItem = AimlessDrive(
         startTime: Date(), endTime: Date(),
-        startLocation: CLLocationCoordinate2D(latitude: 47.62732, longitude: 122.06952),
-        endLocation: CLLocationCoordinate2D(latitude: 47.62732, longitude: 122.06952), route: [])
+        startLocation: CLLocationCoordinate2D(latitude: 40.7309, longitude: -73.9973),
+        endLocation: CLLocationCoordinate2D(latitude: 40.7309, longitude: -73.9980), route: [])
       modelContext.insert(newItem)
     }
   }

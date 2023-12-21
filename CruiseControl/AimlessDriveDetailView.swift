@@ -1,19 +1,25 @@
+import MapKit
 import SwiftUI
 
 struct AimlessDriveDetailView: View {
   var aimlessDrive: AimlessDrive
   var body: some View {
-    Text(
-      "Start Time: \(aimlessDrive.startTime, format: Date.FormatStyle(date: .numeric, time: .standard))"
-    )
-    Text(
-      "End Time: \(aimlessDrive.endTime, format: Date.FormatStyle(date: .numeric, time: .standard))"
-    )
-    Text(
-      "Start Location: \(aimlessDrive.startLocation.latitude.description), \(aimlessDrive.startLocation.longitude.description)"
-    )
-    Text(
-      "End Location: \(aimlessDrive.endLocation.latitude.description), \(aimlessDrive.endLocation.longitude.description)"
-    )
+    Map {
+      Annotation("Start", coordinate: aimlessDrive.startLocation, anchor: .bottom) {
+        Image(systemName: "flag.fill")
+          .padding(8)
+          .foregroundStyle(.white)
+          .background(Color.indigo)
+          .cornerRadius(4)
+      }
+
+      Annotation("End", coordinate: aimlessDrive.endLocation, anchor: .bottom) {
+        Image(systemName: "flag.checkered")
+          .padding(8)
+          .foregroundStyle(.white)
+          .background(Color.orange)
+          .cornerRadius(4)
+      }
+    }
   }
 }
