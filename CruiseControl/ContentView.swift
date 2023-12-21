@@ -9,22 +9,11 @@ struct ContentView: View {
   var body: some View {
     NavigationSplitView {
       List {
-        ForEach(drives) { item in
+        ForEach(drives) { drive in
           NavigationLink {
-            Text(
-              "Start Time: \(item.startTime, format: Date.FormatStyle(date: .numeric, time: .standard))"
-            )
-            Text(
-              "End Time: \(item.endTime, format: Date.FormatStyle(date: .numeric, time: .standard))"
-            )
-            Text(
-              "Start Location: \(item.startLocation.latitude.description), \(item.startLocation.longitude.description)"
-            )
-            Text(
-              "End Location: \(item.endLocation.latitude.description), \(item.endLocation.longitude.description)"
-            )
+            AimlessDriveDetailView(aimlessDrive: drive)
           } label: {
-            Text("Drive completed at \(item.endTime)")
+            Text("Drive completed at \(drive.endTime)")
           }
         }
         .onDelete(perform: deleteItems)
