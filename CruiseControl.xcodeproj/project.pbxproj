@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B771B0132B3415FC00C6623F /* AimlessDrive.swift in Sources */ = {isa = PBXBuildFile; fileRef = B771B0122B3415FC00C6623F /* AimlessDrive.swift */; };
 		B7FFC3392B34151500F0BC27 /* CruiseControlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FFC3382B34151500F0BC27 /* CruiseControlApp.swift */; };
 		B7FFC33B2B34151500F0BC27 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FFC33A2B34151500F0BC27 /* ContentView.swift */; };
 		B7FFC33D2B34151500F0BC27 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FFC33C2B34151500F0BC27 /* Item.swift */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B771B0122B3415FC00C6623F /* AimlessDrive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AimlessDrive.swift; sourceTree = "<group>"; };
 		B7FFC3352B34151500F0BC27 /* CruiseControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CruiseControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7FFC3382B34151500F0BC27 /* CruiseControlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CruiseControlApp.swift; sourceTree = "<group>"; };
 		B7FFC33A2B34151500F0BC27 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				B7FFC3432B34151600F0BC27 /* CruiseControl.entitlements */,
 				B7FFC3442B34151600F0BC27 /* Info.plist */,
 				B7FFC3402B34151600F0BC27 /* Preview Content */,
+				B771B0122B3415FC00C6623F /* AimlessDrive.swift */,
 			);
 			path = CruiseControl;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7FFC33B2B34151500F0BC27 /* ContentView.swift in Sources */,
+				B771B0132B3415FC00C6623F /* AimlessDrive.swift in Sources */,
 				B7FFC33D2B34151500F0BC27 /* Item.swift in Sources */,
 				B7FFC3392B34151500F0BC27 /* CruiseControlApp.swift in Sources */,
 			);
