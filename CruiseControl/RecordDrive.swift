@@ -17,6 +17,15 @@ struct RecordDrive: View {
       if !locationFetcher.route.isEmpty {
         MapPolyline(coordinates: locationFetcher.route).stroke(.blue, style: stroke)
       }
+      if let startingLocation = locationFetcher.route.first {
+        Annotation("Start", coordinate: startingLocation, anchor: .bottom) {
+          Image(systemName: "flag.fill")
+            .padding(8)
+            .foregroundStyle(.white)
+            .background(Color.indigo)
+            .cornerRadius(4)
+        }
+      }
       UserAnnotation()
     }.safeAreaInset(edge: .bottom) {
       HStack {
