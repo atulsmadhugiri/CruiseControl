@@ -36,6 +36,7 @@ struct ContentView: View {
   private func addItem() {
     withAnimation {
       let newItem = AimlessDrive(
+        name: "",
         startTime: Date(), endTime: Date(), route: [])
       modelContext.insert(newItem)
     }

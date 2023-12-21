@@ -43,13 +43,17 @@ struct RecordDrive: View {
             ).textFieldStyle(.roundedBorder)
             Button {
               let aimlessDrive = AimlessDrive(
-                startTime: startTime, endTime: Date(), route: locationFetcher.route)
+                name: driveName,
+                startTime: startTime,
+                endTime: Date(),
+                route: locationFetcher.route)
               modelContext.insert(aimlessDrive)
               showingConfirmationSheet = false
             } label: {
               Label("Save drive", systemImage: "checkmark.circle.fill")
             }.buttonStyle(.borderedProminent)
-              .presentationDetents([.fraction(0.20)]).presentationDragIndicator(.visible)
+              .presentationDetents([.fraction(0.20)])
+              .presentationDragIndicator(.visible)
           }
         Spacer()
       }.background(.thinMaterial)
