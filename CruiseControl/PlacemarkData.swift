@@ -23,4 +23,13 @@ struct PlacemarkData: Codable {
     self.subAdministrativeArea = subAdministrativeArea
     self.country = country
   }
+
+  init(from placemark: CLPlacemark) {
+    self.areasOfInterest = placemark.areasOfInterest
+    self.locality = placemark.locality
+    self.subLocality = placemark.locality
+    self.administrativeArea = placemark.administrativeArea
+    self.subAdministrativeArea = placemark.subAdministrativeArea
+    self.country = placemark.country
+  }
 }
