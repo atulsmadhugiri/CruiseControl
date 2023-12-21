@@ -2,8 +2,10 @@ import MapKit
 import SwiftUI
 
 struct RecordDrive: View {
+  @Environment(\.modelContext) var modelContext
   @StateObject private var locationFetcher = LocationFetcher()
   @State var isTracking: Bool = false
+  @State var startTime: Date = Date()
 
   var body: some View {
     Map {
@@ -12,18 +14,22 @@ struct RecordDrive: View {
       HStack {
         Spacer()
         Button {
-          if isTracking {
+          if !isTracking {
+            locationFetcher.startTracking()
+            startTime = Date()
+            isTracking = true
+          } else {
             locationFetcher.stopTracking()
             isTracking = false
-          } else {
-            locationFetcher.startTracking()
-            isTracking = true
+            let aimlessDrive = AimlessDrive(
+              startTime: startTime, endTime: Date(), route: locationFetcher.route)
+            modelContext.insert(aimlessDrive)
           }
         } label: {
-          if isTracking {
-            Label("Stop recording", systemImage: "stop.fill")
-          } else {
+          if !isTracking {
             Label("Start recording", systemImage: "record.circle")
+          } else {
+            Label("Stop recording", systemImage: "stop.fill")
           }
         }.buttonStyle(.borderedProminent).tint(isTracking ? .red : .green).padding()
         Spacer()
