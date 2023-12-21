@@ -13,7 +13,7 @@ struct ContentView: View {
           NavigationLink {
             AimlessDriveDetailView(aimlessDrive: drive)
           } label: {
-            Text("\(drive.name) completed at \(drive.endTime.formatted(date: .omitted, time: .shortened))")
+            Text("\(drive.name) completed on \(drive.endTime.formatted(date: .abbreviated, time: .shortened))")
           }
         }
         .onDelete(perform: deleteItems)
