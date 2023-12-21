@@ -9,7 +9,15 @@ class LocationFetcher: NSObject, ObservableObject, CLLocationManagerDelegate {
     locationManager.delegate = self
     locationManager.desiredAccuracy = kCLLocationAccuracyBest
     locationManager.requestAlwaysAuthorization()
+  }
+
+  func startTracking() {
+    route.removeAll()
     locationManager.startUpdatingLocation()
+  }
+
+  func stopTracking() {
+    locationManager.stopUpdatingLocation()
   }
 
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
