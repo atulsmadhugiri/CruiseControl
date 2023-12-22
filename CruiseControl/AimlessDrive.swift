@@ -26,10 +26,10 @@ extension CLLocationCoordinate2D: Codable {
 
 @Model
 final class AimlessDrive {
-  var name: String
-  var startTime: Date
-  var endTime: Date
-  var route: [CLLocationCoordinate2D]
+  var name: String = ""
+  var startTime: Date = Date()
+  var endTime: Date = Date()
+  var route: [CLLocationCoordinate2D] = []
 
   init(
     name: String,
