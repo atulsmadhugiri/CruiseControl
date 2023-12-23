@@ -11,9 +11,11 @@ struct RecordDrive: View {
 
   @State private var driveName = ""
 
+  @State private var position : MapCameraPosition = .userLocation(fallback: .automatic)
+
   let stroke = StrokeStyle(lineWidth: 6, lineCap: .round, lineJoin: .round)
   var body: some View {
-    Map {
+    Map (position : $position){
       if !locationFetcher.route.isEmpty {
         MapPolyline(coordinates: locationFetcher.route).stroke(.blue, style: stroke)
       }
@@ -36,6 +38,9 @@ struct RecordDrive: View {
         Spacer()
         Button {
           if !isTracking {
+              withAnimation(.easeInOut){
+                  position = .userLocation(fallback: .automatic)
+            }
             locationFetcher.startTracking()
             startTime = Date()
             isTracking = true
