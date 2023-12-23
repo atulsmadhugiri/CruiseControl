@@ -27,6 +27,10 @@ struct RecordDrive: View {
         }
       }
       UserAnnotation()
+
+    }.mapControls {
+      MapUserLocationButton()
+      MapCompass()
     }.safeAreaInset(edge: .bottom) {
       HStack {
         Spacer()
