@@ -4,12 +4,6 @@
 <dict>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>CruiseControl needs location data to plot drives.</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>CruiseControl needs location data to plot drives.</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>CruiseControl needs location data to plot drives.</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>
