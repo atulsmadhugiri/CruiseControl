@@ -4,6 +4,15 @@ struct AchievementsView: View {
   var body: some View {
     List {
       HStack {
+        SpeedRacerBadge().padding()
+        VStack(alignment: .leading) {
+          Text("Speed Racer").font(.system(size: 20, design: .rounded).weight(.bold))
+          Text("Top Speed over 85 MPH")
+        }
+        Spacer()
+        Image(systemName: "lock.fill").imageScale(.large)
+      }
+      HStack {
         RiseAndGrindBadge().padding()
         VStack(alignment: .leading) {
           Text("Rise And Grind").font(.system(size: 20, design: .rounded).weight(.bold))
