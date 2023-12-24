@@ -9,6 +9,9 @@ struct RootView: View {
       AimlessDriveList().tabItem {
         Label("Drives", systemImage: "map")
       }
+      AchievementsView().tabItem {
+        Label("Achievements", systemImage: "trophy.fill")
+      }
     }
   }
 }
