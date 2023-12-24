@@ -24,6 +24,12 @@ extension CLLocationCoordinate2D: Codable {
 
 }
 
+extension CLLocation {
+  convenience init(coordinate: CLLocationCoordinate2D) {
+    self.init(latitude: coordinate.latitude, longitude: coordinate.longitude)
+  }
+}
+
 @Model
 final class AimlessDrive {
   var name: String = ""
