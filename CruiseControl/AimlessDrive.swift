@@ -1,5 +1,6 @@
 import CoreLocation
 import Foundation
+import MapKit
 import SwiftData
 
 extension CLLocationCoordinate2D: Codable {
@@ -62,5 +63,11 @@ final class AimlessDrive {
     }
 
     return distance
+  }
+
+  func formattedDistanceTraveled() -> String {
+    let distanceFormatter = MKDistanceFormatter()
+    distanceFormatter.unitStyle = .full
+    return distanceFormatter.string(fromDistance: self.distanceTraveled())
   }
 }
