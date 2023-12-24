@@ -7,7 +7,8 @@ class LocationFetcher: NSObject, ObservableObject, CLLocationManagerDelegate {
   override init() {
     super.init()
     locationManager.delegate = self
-    locationManager.desiredAccuracy = kCLLocationAccuracyBest
+    locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+    locationManager.allowsBackgroundLocationUpdates = true
     locationManager.requestAlwaysAuthorization()
   }
 

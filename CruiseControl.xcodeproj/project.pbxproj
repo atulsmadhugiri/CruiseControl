@@ -343,6 +343,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CruiseControl/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "CruiseControl needs location data to plot drives.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "CruiseControl needs location data to plot drives.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "CruiseControl needs location data to plot drives.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -375,6 +378,9 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CruiseControl/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "CruiseControl needs location data to plot drives.";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "CruiseControl needs location data to plot drives.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "CruiseControl needs location data to plot drives.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
