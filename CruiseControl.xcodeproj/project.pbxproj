@@ -17,11 +17,23 @@
 		B7EB858A2B3702AF00D050CD /* RiseAndGrindBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB85892B3702AF00D050CD /* RiseAndGrindBadge.swift */; };
 		B7EB858F2B3707E300D050CD /* GasGuzzlerBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB858E2B3707E300D050CD /* GasGuzzlerBadge.swift */; };
 		B7EB85912B3708A700D050CD /* SlowPokeBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB85902B3708A700D050CD /* SlowPokeBadge.swift */; };
+		B7EB85A52B38074D00D050CD /* CruiseControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB85A42B38074D00D050CD /* CruiseControlTests.swift */; };
+		B7EB85AC2B3807D800D050CD /* AimlessDrive.swift in Sources */ = {isa = PBXBuildFile; fileRef = B771B0122B3415FC00C6623F /* AimlessDrive.swift */; };
 		B7FFC3392B34151500F0BC27 /* CruiseControlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FFC3382B34151500F0BC27 /* CruiseControlApp.swift */; };
 		B7FFC33B2B34151500F0BC27 /* AimlessDriveList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FFC33A2B34151500F0BC27 /* AimlessDriveList.swift */; };
 		B7FFC33F2B34151600F0BC27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7FFC33E2B34151600F0BC27 /* Assets.xcassets */; };
 		B7FFC3422B34151600F0BC27 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7FFC3412B34151600F0BC27 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B7EB85A62B38074D00D050CD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B7FFC32D2B34151500F0BC27 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B7FFC3342B34151500F0BC27;
+			remoteInfo = CruiseControl;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		B72FD0EA2B341EBC0061B368 /* AimlessDriveDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AimlessDriveDetailView.swift; sourceTree = "<group>"; };
@@ -34,6 +46,8 @@
 		B7EB85892B3702AF00D050CD /* RiseAndGrindBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiseAndGrindBadge.swift; sourceTree = "<group>"; };
 		B7EB858E2B3707E300D050CD /* GasGuzzlerBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasGuzzlerBadge.swift; sourceTree = "<group>"; };
 		B7EB85902B3708A700D050CD /* SlowPokeBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlowPokeBadge.swift; sourceTree = "<group>"; };
+		B7EB85A22B38074D00D050CD /* CruiseControlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CruiseControlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7EB85A42B38074D00D050CD /* CruiseControlTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CruiseControlTests.swift; sourceTree = "<group>"; };
 		B7FFC3352B34151500F0BC27 /* CruiseControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CruiseControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7FFC3382B34151500F0BC27 /* CruiseControlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CruiseControlApp.swift; sourceTree = "<group>"; };
 		B7FFC33A2B34151500F0BC27 /* AimlessDriveList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AimlessDriveList.swift; sourceTree = "<group>"; };
@@ -44,6 +58,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B7EB859F2B38074D00D050CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B7FFC3322B34151500F0BC27 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -64,10 +85,19 @@
 			path = AchievementBadges;
 			sourceTree = "<group>";
 		};
+		B7EB85A32B38074D00D050CD /* CruiseControlTests */ = {
+			isa = PBXGroup;
+			children = (
+				B7EB85A42B38074D00D050CD /* CruiseControlTests.swift */,
+			);
+			path = CruiseControlTests;
+			sourceTree = "<group>";
+		};
 		B7FFC32C2B34151500F0BC27 = {
 			isa = PBXGroup;
 			children = (
 				B7FFC3372B34151500F0BC27 /* CruiseControl */,
+				B7EB85A32B38074D00D050CD /* CruiseControlTests */,
 				B7FFC3362B34151500F0BC27 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -76,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				B7FFC3352B34151500F0BC27 /* CruiseControl.app */,
+				B7EB85A22B38074D00D050CD /* CruiseControlTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -112,6 +143,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		B7EB85A12B38074D00D050CD /* CruiseControlTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B7EB85A82B38074D00D050CD /* Build configuration list for PBXNativeTarget "CruiseControlTests" */;
+			buildPhases = (
+				B7EB859E2B38074D00D050CD /* Sources */,
+				B7EB859F2B38074D00D050CD /* Frameworks */,
+				B7EB85A02B38074D00D050CD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B7EB85A72B38074D00D050CD /* PBXTargetDependency */,
+			);
+			name = CruiseControlTests;
+			productName = CruiseControlTests;
+			productReference = B7EB85A22B38074D00D050CD /* CruiseControlTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		B7FFC3342B34151500F0BC27 /* CruiseControl */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B7FFC3472B34151600F0BC27 /* Build configuration list for PBXNativeTarget "CruiseControl" */;
@@ -141,6 +190,10 @@
 				LastSwiftUpdateCheck = 1510;
 				LastUpgradeCheck = 1510;
 				TargetAttributes = {
+					B7EB85A12B38074D00D050CD = {
+						CreatedOnToolsVersion = 15.1;
+						TestTargetID = B7FFC3342B34151500F0BC27;
+					};
 					B7FFC3342B34151500F0BC27 = {
 						CreatedOnToolsVersion = 15.1;
 					};
@@ -162,11 +215,19 @@
 			projectRoot = "";
 			targets = (
 				B7FFC3342B34151500F0BC27 /* CruiseControl */,
+				B7EB85A12B38074D00D050CD /* CruiseControlTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		B7EB85A02B38074D00D050CD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B7FFC3332B34151500F0BC27 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -179,6 +240,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B7EB859E2B38074D00D050CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7EB85A52B38074D00D050CD /* CruiseControlTests.swift in Sources */,
+				B7EB85AC2B3807D800D050CD /* AimlessDrive.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B7FFC3312B34151500F0BC27 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -200,7 +270,53 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		B7EB85A72B38074D00D050CD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B7FFC3342B34151500F0BC27 /* CruiseControl */;
+			targetProxy = B7EB85A62B38074D00D050CD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		B7EB85A92B38074D00D050CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HM6Y2RQS2R;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = atul.CruiseControlTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CruiseControl.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CruiseControl";
+			};
+			name = Debug;
+		};
+		B7EB85AA2B38074D00D050CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HM6Y2RQS2R;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = atul.CruiseControlTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CruiseControl.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CruiseControl";
+			};
+			name = Release;
+		};
 		B7FFC3452B34151600F0BC27 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -393,6 +509,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B7EB85A82B38074D00D050CD /* Build configuration list for PBXNativeTarget "CruiseControlTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B7EB85A92B38074D00D050CD /* Debug */,
+				B7EB85AA2B38074D00D050CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B7FFC3302B34151500F0BC27 /* Build configuration list for PBXProject "CruiseControl" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
