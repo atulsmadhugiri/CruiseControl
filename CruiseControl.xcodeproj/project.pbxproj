@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9DCE276B2B383054008DCD85 /* AchievementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE276A2B383054008DCD85 /* AchievementsView.swift */; };
+		9DCE276D2B384005008DCD85 /* SpeedRacerBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE276C2B384005008DCD85 /* SpeedRacerBadge.swift */; };
 		B728BD0A2B381FC1008C39FC /* RouteUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B728BD092B381FC1008C39FC /* RouteUtils.swift */; };
 		B72FD0EB2B341EBC0061B368 /* AimlessDriveDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72FD0EA2B341EBC0061B368 /* AimlessDriveDetailView.swift */; };
 		B72FD0EF2B342E170061B368 /* LocationFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72FD0EE2B342E170061B368 /* LocationFetcher.swift */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		9DCE276A2B383054008DCD85 /* AchievementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsView.swift; sourceTree = "<group>"; };
+		9DCE276C2B384005008DCD85 /* SpeedRacerBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedRacerBadge.swift; sourceTree = "<group>"; };
 		B728BD092B381FC1008C39FC /* RouteUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteUtils.swift; sourceTree = "<group>"; };
 		B72FD0EA2B341EBC0061B368 /* AimlessDriveDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AimlessDriveDetailView.swift; sourceTree = "<group>"; };
 		B72FD0EE2B342E170061B368 /* LocationFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcher.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				B7EB85892B3702AF00D050CD /* RiseAndGrindBadge.swift */,
 				B7EB858E2B3707E300D050CD /* GasGuzzlerBadge.swift */,
 				B7EB85902B3708A700D050CD /* SlowPokeBadge.swift */,
+				9DCE276C2B384005008DCD85 /* SpeedRacerBadge.swift */,
 			);
 			path = AchievementBadges;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				B72FD0F92B3505B40061B368 /* CoordinatePlacemarkData.swift in Sources */,
 				B72FD0F72B3504400061B368 /* PlacemarkData.swift in Sources */,
 				B72FD0EB2B341EBC0061B368 /* AimlessDriveDetailView.swift in Sources */,
+				9DCE276D2B384005008DCD85 /* SpeedRacerBadge.swift in Sources */,
 				B72FD0EF2B342E170061B368 /* LocationFetcher.swift in Sources */,
 				B7EB858A2B3702AF00D050CD /* RiseAndGrindBadge.swift in Sources */,
 				B771B0132B3415FC00C6623F /* AimlessDrive.swift in Sources */,
