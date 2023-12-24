@@ -17,9 +17,6 @@
 		B7EB858A2B3702AF00D050CD /* RiseAndGrindBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB85892B3702AF00D050CD /* RiseAndGrindBadge.swift */; };
 		B7EB858F2B3707E300D050CD /* GasGuzzlerBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB858E2B3707E300D050CD /* GasGuzzlerBadge.swift */; };
 		B7EB85912B3708A700D050CD /* SlowPokeBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB85902B3708A700D050CD /* SlowPokeBadge.swift */; };
-		B7EB85942B37E8D000D050CD /* SwiftFormat in Frameworks */ = {isa = PBXBuildFile; productRef = B7EB85932B37E8D000D050CD /* SwiftFormat */; };
-		B7EB85962B37E8D000D050CD /* SwiftFormatConfiguration in Frameworks */ = {isa = PBXBuildFile; productRef = B7EB85952B37E8D000D050CD /* SwiftFormatConfiguration */; };
-		B7EB85982B37E8D000D050CD /* swift-format in Frameworks */ = {isa = PBXBuildFile; productRef = B7EB85972B37E8D000D050CD /* swift-format */; };
 		B7FFC3392B34151500F0BC27 /* CruiseControlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FFC3382B34151500F0BC27 /* CruiseControlApp.swift */; };
 		B7FFC33B2B34151500F0BC27 /* AimlessDriveList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FFC33A2B34151500F0BC27 /* AimlessDriveList.swift */; };
 		B7FFC33F2B34151600F0BC27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7FFC33E2B34151600F0BC27 /* Assets.xcassets */; };
@@ -51,9 +48,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B7EB85962B37E8D000D050CD /* SwiftFormatConfiguration in Frameworks */,
-				B7EB85942B37E8D000D050CD /* SwiftFormat in Frameworks */,
-				B7EB85982B37E8D000D050CD /* swift-format in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,9 +126,6 @@
 			);
 			name = CruiseControl;
 			packageProductDependencies = (
-				B7EB85932B37E8D000D050CD /* SwiftFormat */,
-				B7EB85952B37E8D000D050CD /* SwiftFormatConfiguration */,
-				B7EB85972B37E8D000D050CD /* swift-format */,
 			);
 			productName = CruiseControl;
 			productReference = B7FFC3352B34151500F0BC27 /* CruiseControl.app */;
@@ -165,7 +156,6 @@
 			);
 			mainGroup = B7FFC32C2B34151500F0BC27;
 			packageReferences = (
-				B7EB85922B37E8D000D050CD /* XCRemoteSwiftPackageReference "swift-format" */,
 			);
 			productRefGroup = B7FFC3362B34151500F0BC27 /* Products */;
 			projectDirPath = "";
@@ -422,35 +412,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		B7EB85922B37E8D000D050CD /* XCRemoteSwiftPackageReference "swift-format" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/apple/swift-format";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 509.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		B7EB85932B37E8D000D050CD /* SwiftFormat */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B7EB85922B37E8D000D050CD /* XCRemoteSwiftPackageReference "swift-format" */;
-			productName = SwiftFormat;
-		};
-		B7EB85952B37E8D000D050CD /* SwiftFormatConfiguration */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B7EB85922B37E8D000D050CD /* XCRemoteSwiftPackageReference "swift-format" */;
-			productName = SwiftFormatConfiguration;
-		};
-		B7EB85972B37E8D000D050CD /* swift-format */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B7EB85922B37E8D000D050CD /* XCRemoteSwiftPackageReference "swift-format" */;
-			productName = "swift-format";
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B7FFC32D2B34151500F0BC27 /* Project object */;
 }
