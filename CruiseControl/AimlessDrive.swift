@@ -48,4 +48,19 @@ final class AimlessDrive {
     self.endTime = endTime
     self.route = route
   }
+
+  func distanceTraveled() -> CLLocationDistance {
+    guard !route.isEmpty else { return 0 }
+
+    var distance: CLLocationDistance = 0
+    var pointA = CLLocation(coordinate: route[0])
+
+    for idx in 1..<route.count {
+      let pointB = CLLocation(coordinate: route[idx])
+      distance += pointA.distance(from: pointB)
+      pointA = pointB
+    }
+
+    return distance
+  }
 }
