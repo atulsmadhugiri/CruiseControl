@@ -16,7 +16,7 @@ struct AchievementsView: View {
         GasGuzzlerBadge().padding()
         VStack(alignment: .leading) {
           Text("Gas Guzzler").font(.system(size: 20, design: .rounded).weight(.bold))
-          Text("Drive more than PLACEHOLD miles")
+          Text("Drive more than 100 miles")
         }
         Spacer()
         Image(systemName: "lock.fill").imageScale(.large)
