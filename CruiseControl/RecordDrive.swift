@@ -67,7 +67,8 @@ struct RecordDrive: View {
                 name: driveName,
                 startTime: startTime,
                 endTime: Date(),
-                route: locationFetcher.route)
+                route: locationFetcher.route,
+                distanceTraveled: distanceTraveled(route: locationFetcher.route))
               modelContext.insert(aimlessDrive)
               showingConfirmationSheet = false
             } label: {

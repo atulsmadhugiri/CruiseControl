@@ -16,8 +16,7 @@ func distanceTraveled(route: [CLLocationCoordinate2D]) -> CLLocationDistance {
   return distance
 }
 
-func formattedDistanceTraveled(route: [CLLocationCoordinate2D]) -> String {
-  let distance = distanceTraveled(route: route)
+func formattedDistanceTraveled(distance: CLLocationDistance) -> String {
   let distanceFormatter = MKDistanceFormatter()
   distanceFormatter.unitStyle = .full
   return distanceFormatter.string(fromDistance: distance)

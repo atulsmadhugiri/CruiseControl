@@ -32,7 +32,7 @@ struct AimlessDriveList: View {
 
               VStack(alignment: .leading) {
                 Text(drive.name).font(.system(size: 20, design: .rounded).weight(.bold))
-                Text(formattedDistanceTraveled(route: drive.route))
+                Text(formattedDistanceTraveled(distance: drive.distanceTraveled))
                 Text(drive.endTime.formatted(date: .abbreviated, time: .shortened))
                   .font(.system(size: 12, design: .rounded))
                 Spacer()
