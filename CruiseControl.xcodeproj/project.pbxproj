@@ -17,6 +17,7 @@
 		B72FD0F72B3504400061B368 /* PlacemarkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72FD0F62B3504400061B368 /* PlacemarkData.swift */; };
 		B72FD0F92B3505B40061B368 /* CoordinatePlacemarkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72FD0F82B3505B40061B368 /* CoordinatePlacemarkData.swift */; };
 		B771B0132B3415FC00C6623F /* AimlessDrive.swift in Sources */ = {isa = PBXBuildFile; fileRef = B771B0122B3415FC00C6623F /* AimlessDrive.swift */; };
+		B78BAED22B384878005DFD44 /* AimlessDriveListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78BAED12B384878005DFD44 /* AimlessDriveListCell.swift */; };
 		B7EB858A2B3702AF00D050CD /* RiseAndGrindBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB85892B3702AF00D050CD /* RiseAndGrindBadge.swift */; };
 		B7EB858F2B3707E300D050CD /* GasGuzzlerBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB858E2B3707E300D050CD /* GasGuzzlerBadge.swift */; };
 		B7EB85912B3708A700D050CD /* SlowPokeBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB85902B3708A700D050CD /* SlowPokeBadge.swift */; };
@@ -49,6 +50,7 @@
 		B72FD0F62B3504400061B368 /* PlacemarkData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarkData.swift; sourceTree = "<group>"; };
 		B72FD0F82B3505B40061B368 /* CoordinatePlacemarkData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatePlacemarkData.swift; sourceTree = "<group>"; };
 		B771B0122B3415FC00C6623F /* AimlessDrive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AimlessDrive.swift; sourceTree = "<group>"; };
+		B78BAED12B384878005DFD44 /* AimlessDriveListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AimlessDriveListCell.swift; sourceTree = "<group>"; };
 		B7EB85892B3702AF00D050CD /* RiseAndGrindBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiseAndGrindBadge.swift; sourceTree = "<group>"; };
 		B7EB858E2B3707E300D050CD /* GasGuzzlerBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasGuzzlerBadge.swift; sourceTree = "<group>"; };
 		B7EB85902B3708A700D050CD /* SlowPokeBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlowPokeBadge.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				B7FFC3402B34151600F0BC27 /* Preview Content */,
 				B771B0122B3415FC00C6623F /* AimlessDrive.swift */,
 				B7FFC33A2B34151500F0BC27 /* AimlessDriveList.swift */,
+				B78BAED12B384878005DFD44 /* AimlessDriveListCell.swift */,
 				B72FD0EA2B341EBC0061B368 /* AimlessDriveDetailView.swift */,
 				B72FD0EE2B342E170061B368 /* LocationFetcher.swift */,
 				B72FD0F62B3504400061B368 /* PlacemarkData.swift */,
@@ -275,6 +278,7 @@
 				B72FD0F32B3434020061B368 /* RootView.swift in Sources */,
 				B7EB85912B3708A700D050CD /* SlowPokeBadge.swift in Sources */,
 				B728BD0A2B381FC1008C39FC /* RouteUtils.swift in Sources */,
+				B78BAED22B384878005DFD44 /* AimlessDriveListCell.swift in Sources */,
 				B7FFC3392B34151500F0BC27 /* CruiseControlApp.swift in Sources */,
 				B72FD0F12B3432D00061B368 /* RecordDrive.swift in Sources */,
 			);
