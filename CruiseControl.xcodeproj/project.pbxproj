@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B728BD0A2B381FC1008C39FC /* RouteUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B728BD092B381FC1008C39FC /* RouteUtils.swift */; };
 		B72FD0EB2B341EBC0061B368 /* AimlessDriveDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72FD0EA2B341EBC0061B368 /* AimlessDriveDetailView.swift */; };
 		B72FD0EF2B342E170061B368 /* LocationFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72FD0EE2B342E170061B368 /* LocationFetcher.swift */; };
 		B72FD0F12B3432D00061B368 /* RecordDrive.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72FD0F02B3432D00061B368 /* RecordDrive.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B728BD092B381FC1008C39FC /* RouteUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteUtils.swift; sourceTree = "<group>"; };
 		B72FD0EA2B341EBC0061B368 /* AimlessDriveDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AimlessDriveDetailView.swift; sourceTree = "<group>"; };
 		B72FD0EE2B342E170061B368 /* LocationFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcher.swift; sourceTree = "<group>"; };
 		B72FD0F02B3432D00061B368 /* RecordDrive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDrive.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				B72FD0F82B3505B40061B368 /* CoordinatePlacemarkData.swift */,
 				B72FD0F02B3432D00061B368 /* RecordDrive.swift */,
 				B72FD0F22B3434020061B368 /* RootView.swift */,
+				B728BD092B381FC1008C39FC /* RouteUtils.swift */,
 			);
 			path = CruiseControl;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				B771B0132B3415FC00C6623F /* AimlessDrive.swift in Sources */,
 				B72FD0F32B3434020061B368 /* RootView.swift in Sources */,
 				B7EB85912B3708A700D050CD /* SlowPokeBadge.swift in Sources */,
+				B728BD0A2B381FC1008C39FC /* RouteUtils.swift in Sources */,
 				B7FFC3392B34151500F0BC27 /* CruiseControlApp.swift in Sources */,
 				B72FD0F12B3432D00061B368 /* RecordDrive.swift in Sources */,
 			);
