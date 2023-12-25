@@ -27,6 +27,6 @@ struct AimlessDriveListCell: View {
           .font(.system(size: 12, design: .rounded))
         Spacer()
       }.padding()
-    }.padding(EdgeInsets(top: 8.0, leading: 0, bottom: 8.0, trailing: 0))
+    }
   }
 }

@@ -8,24 +8,25 @@ struct AimlessDriveList: View {
   @Query(sort: \AimlessDrive.endTime, order: .reverse) private var drives: [AimlessDrive]
 
   var body: some View {
-    NavigationSplitView {
+    NavigationStack {
       List {
         ForEach(drives) { drive in
           NavigationLink {
             AimlessDriveDetailView(aimlessDrive: drive)
+              .navigationTitle(drive.name)
+              .navigationBarTitleDisplayMode(.inline)
           } label: {
             AimlessDriveListCell(drive: drive)
           }
         }
         .onDelete(perform: deleteItems)
-      }
-      .toolbar {
-        ToolbarItem(placement: .navigationBarTrailing) {
-          EditButton()
+      }.navigationTitle("Drives")
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+          ToolbarItem(placement: .navigationBarTrailing) {
+            EditButton()
+          }
         }
-      }
-    } detail: {
-      Text("Select an item")
     }
   }
 
