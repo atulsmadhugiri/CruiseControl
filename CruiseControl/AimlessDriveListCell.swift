@@ -2,6 +2,7 @@ import MapKit
 import SwiftUI
 
 struct AimlessDriveListCell: View {
+  @ObservedObject var weatherUtil = WeatherUtils()
   var drive: AimlessDrive
   var body: some View {
     HStack {
@@ -25,6 +26,13 @@ struct AimlessDriveListCell: View {
         Text(formattedDistanceTraveled(distance: drive.distanceTraveled))
         Text(drive.endTime.formatted(date: .abbreviated, time: .shortened))
           .font(.system(size: 12, design: .rounded))
+          .padding(.bottom)
+        Label(weatherUtil.temp, systemImage: weatherUtil.symbol)
+          .labelStyle(.automatic)
+          .font(.system(size: 12, design: .rounded))
+          .task {
+            await weatherUtil.getWeather()
+          }
         Spacer()
       }.padding()
     }.padding(EdgeInsets(top: 8.0, leading: 0, bottom: 8.0, trailing: 0))
