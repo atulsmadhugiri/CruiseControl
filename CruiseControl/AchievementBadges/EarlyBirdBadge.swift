@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct RiseAndGrindBadge: View {
+struct EarlyBirdBadge: View {
   var body: some View {
     ZStack {
       Rectangle()
@@ -18,5 +18,5 @@ struct RiseAndGrindBadge: View {
 }
 
 #Preview {
-  RiseAndGrindBadge()
+  EarlyBirdBadge()
 }

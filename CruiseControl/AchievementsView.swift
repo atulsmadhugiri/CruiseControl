@@ -13,9 +13,9 @@ struct AchievementsView: View {
         Image(systemName: "lock.fill").imageScale(.large)
       }
       HStack {
-        RiseAndGrindBadge().padding()
+        EarlyBirdBadge().padding()
         VStack(alignment: .leading) {
-          Text("Rise And Grind").font(.system(size: 20, design: .rounded).weight(.bold))
+          Text("Early Bird").font(.system(size: 20, design: .rounded).weight(.bold))
           Text("Start a drive before 7:00 AM")
         }
         Spacer()

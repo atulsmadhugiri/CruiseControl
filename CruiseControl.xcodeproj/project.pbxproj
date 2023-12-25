@@ -18,7 +18,7 @@
 		B72FD0F92B3505B40061B368 /* CoordinatePlacemarkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72FD0F82B3505B40061B368 /* CoordinatePlacemarkData.swift */; };
 		B771B0132B3415FC00C6623F /* AimlessDrive.swift in Sources */ = {isa = PBXBuildFile; fileRef = B771B0122B3415FC00C6623F /* AimlessDrive.swift */; };
 		B78BAED22B384878005DFD44 /* AimlessDriveListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78BAED12B384878005DFD44 /* AimlessDriveListCell.swift */; };
-		B7EB858A2B3702AF00D050CD /* RiseAndGrindBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB85892B3702AF00D050CD /* RiseAndGrindBadge.swift */; };
+		B7EB858A2B3702AF00D050CD /* EarlyBirdBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB85892B3702AF00D050CD /* EarlyBirdBadge.swift */; };
 		B7EB858F2B3707E300D050CD /* GasGuzzlerBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB858E2B3707E300D050CD /* GasGuzzlerBadge.swift */; };
 		B7EB85912B3708A700D050CD /* SlowPokeBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB85902B3708A700D050CD /* SlowPokeBadge.swift */; };
 		B7EB85A52B38074D00D050CD /* CruiseControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB85A42B38074D00D050CD /* CruiseControlTests.swift */; };
@@ -51,7 +51,7 @@
 		B72FD0F82B3505B40061B368 /* CoordinatePlacemarkData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatePlacemarkData.swift; sourceTree = "<group>"; };
 		B771B0122B3415FC00C6623F /* AimlessDrive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AimlessDrive.swift; sourceTree = "<group>"; };
 		B78BAED12B384878005DFD44 /* AimlessDriveListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AimlessDriveListCell.swift; sourceTree = "<group>"; };
-		B7EB85892B3702AF00D050CD /* RiseAndGrindBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiseAndGrindBadge.swift; sourceTree = "<group>"; };
+		B7EB85892B3702AF00D050CD /* EarlyBirdBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarlyBirdBadge.swift; sourceTree = "<group>"; };
 		B7EB858E2B3707E300D050CD /* GasGuzzlerBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasGuzzlerBadge.swift; sourceTree = "<group>"; };
 		B7EB85902B3708A700D050CD /* SlowPokeBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlowPokeBadge.swift; sourceTree = "<group>"; };
 		B7EB85A22B38074D00D050CD /* CruiseControlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CruiseControlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,7 +86,7 @@
 		B7EB858B2B37052100D050CD /* AchievementBadges */ = {
 			isa = PBXGroup;
 			children = (
-				B7EB85892B3702AF00D050CD /* RiseAndGrindBadge.swift */,
+				B7EB85892B3702AF00D050CD /* EarlyBirdBadge.swift */,
 				B7EB858E2B3707E300D050CD /* GasGuzzlerBadge.swift */,
 				B7EB85902B3708A700D050CD /* SlowPokeBadge.swift */,
 				9DCE276C2B384005008DCD85 /* SpeedRacerBadge.swift */,
@@ -273,7 +273,7 @@
 				B72FD0EB2B341EBC0061B368 /* AimlessDriveDetailView.swift in Sources */,
 				9DCE276D2B384005008DCD85 /* SpeedRacerBadge.swift in Sources */,
 				B72FD0EF2B342E170061B368 /* LocationFetcher.swift in Sources */,
-				B7EB858A2B3702AF00D050CD /* RiseAndGrindBadge.swift in Sources */,
+				B7EB858A2B3702AF00D050CD /* EarlyBirdBadge.swift in Sources */,
 				B771B0132B3415FC00C6623F /* AimlessDrive.swift in Sources */,
 				B72FD0F32B3434020061B368 /* RootView.swift in Sources */,
 				B7EB85912B3708A700D050CD /* SlowPokeBadge.swift in Sources */,
