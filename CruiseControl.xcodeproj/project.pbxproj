@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9DCE276B2B383054008DCD85 /* AchievementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE276A2B383054008DCD85 /* AchievementsView.swift */; };
 		9DCE276D2B384005008DCD85 /* SpeedRacerBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE276C2B384005008DCD85 /* SpeedRacerBadge.swift */; };
+		9DCE276F2B391742008DCD85 /* WeatherUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE276E2B391742008DCD85 /* WeatherUtils.swift */; };
 		B728BD0A2B381FC1008C39FC /* RouteUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B728BD092B381FC1008C39FC /* RouteUtils.swift */; };
 		B72FD0EB2B341EBC0061B368 /* AimlessDriveDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72FD0EA2B341EBC0061B368 /* AimlessDriveDetailView.swift */; };
 		B72FD0EF2B342E170061B368 /* LocationFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72FD0EE2B342E170061B368 /* LocationFetcher.swift */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		9DCE276A2B383054008DCD85 /* AchievementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsView.swift; sourceTree = "<group>"; };
 		9DCE276C2B384005008DCD85 /* SpeedRacerBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedRacerBadge.swift; sourceTree = "<group>"; };
+		9DCE276E2B391742008DCD85 /* WeatherUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherUtils.swift; sourceTree = "<group>"; };
 		B728BD092B381FC1008C39FC /* RouteUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteUtils.swift; sourceTree = "<group>"; };
 		B72FD0EA2B341EBC0061B368 /* AimlessDriveDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AimlessDriveDetailView.swift; sourceTree = "<group>"; };
 		B72FD0EE2B342E170061B368 /* LocationFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcher.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				B72FD0F22B3434020061B368 /* RootView.swift */,
 				B728BD092B381FC1008C39FC /* RouteUtils.swift */,
 				9DCE276A2B383054008DCD85 /* AchievementsView.swift */,
+				9DCE276E2B391742008DCD85 /* WeatherUtils.swift */,
 			);
 			path = CruiseControl;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				B7EB858F2B3707E300D050CD /* GasGuzzlerBadge.swift in Sources */,
 				9DCE276B2B383054008DCD85 /* AchievementsView.swift in Sources */,
 				B72FD0F92B3505B40061B368 /* CoordinatePlacemarkData.swift in Sources */,
+				9DCE276F2B391742008DCD85 /* WeatherUtils.swift in Sources */,
 				B72FD0F72B3504400061B368 /* PlacemarkData.swift in Sources */,
 				B72FD0EB2B341EBC0061B368 /* AimlessDriveDetailView.swift in Sources */,
 				9DCE276D2B384005008DCD85 /* SpeedRacerBadge.swift in Sources */,
