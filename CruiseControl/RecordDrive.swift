@@ -52,8 +52,14 @@ struct RecordDrive: View {
         } label: {
           if !isTracking {
             Label("Start recording", systemImage: "record.circle")
+              .frame(maxWidth: .infinity)
+              .frame(height: 40)
+              .font(.title3)
           } else {
             Label("Stop recording", systemImage: "stop.fill")
+              .frame(maxWidth: .infinity)
+              .frame(height: 40)
+              .font(.title3)
           }
         }.buttonStyle(.borderedProminent)
           .tint(isTracking ? .red : .green)
