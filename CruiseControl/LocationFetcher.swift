@@ -9,6 +9,7 @@ class LocationFetcher: NSObject, ObservableObject, CLLocationManagerDelegate {
     locationManager.delegate = self
     locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
     locationManager.allowsBackgroundLocationUpdates = true
+    locationManager.pausesLocationUpdatesAutomatically = true
     locationManager.requestAlwaysAuthorization()
   }
 
