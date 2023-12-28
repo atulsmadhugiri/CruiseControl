@@ -1,7 +1,8 @@
 import CloudKit
 import CoreLocation
 
-struct DrivePost {
+struct DrivePost: Identifiable {
+  let id: UUID
   var recordID: CKRecord.ID?
 
   var name: String
@@ -11,6 +12,23 @@ struct DrivePost {
   var endTime: Date
   var route: [CLLocationCoordinate2D]
   var distanceTraveled: CLLocationDistance
+
+  init(
+    name: String,
+    description: String,
+    startTime: Date,
+    endTime: Date,
+    route: [CLLocationCoordinate2D],
+    distanceTraveled: CLLocationDistance
+  ) {
+    self.id = UUID()
+    self.name = name
+    self.description = description
+    self.startTime = startTime
+    self.endTime = endTime
+    self.route = route
+    self.distanceTraveled = distanceTraveled
+  }
 }
 
 extension DrivePost {
