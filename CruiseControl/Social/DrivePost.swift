@@ -56,14 +56,15 @@ extension DrivePost {
       let startTime = record["startTime"] as? Date,
       let endTime = record["endTime"] as? Date,
       let distanceTraveled = record["distanceTraveled"] as? CLLocationDistance,
-      let routeData = record["route"] as? [[String: Double]]
+      let routeStrings = record["route"] as? [String]
     else {
       return nil
     }
 
-    let route = routeData.compactMap { data -> CLLocationCoordinate2D? in
-      guard let latitude = data["latitude"], let longitude = data["longitude"] else { return nil }
-      return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+    let route = routeStrings.compactMap { string -> CLLocationCoordinate2D? in
+      let components = string.split(separator: ",").compactMap { Double($0) }
+      guard components.count == 2 else { return nil }
+      return CLLocationCoordinate2D(latitude: components[0], longitude: components[1])
     }
 
     self.init(
