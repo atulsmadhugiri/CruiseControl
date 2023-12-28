@@ -30,3 +30,30 @@ extension DrivePost {
     return record
   }
 }
+
+extension DrivePost {
+  init?(from record: CKRecord) {
+    guard let name = record["name"] as? String,
+      let description = record["description"] as? String,
+      let startTime = record["startTime"] as? Date,
+      let endTime = record["endTime"] as? Date,
+      let distanceTraveled = record["distanceTraveled"] as? CLLocationDistance,
+      let routeData = record["route"] as? [[String: Double]]
+    else {
+      return nil
+    }
+
+    let route = routeData.compactMap { data -> CLLocationCoordinate2D? in
+      guard let latitude = data["latitude"], let longitude = data["longitude"] else { return nil }
+      return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+    }
+
+    self.init(
+      name: name,
+      description: description,
+      startTime: startTime,
+      endTime: endTime,
+      route: route,
+      distanceTraveled: distanceTraveled)
+  }
+}
