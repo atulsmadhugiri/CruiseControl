@@ -3,6 +3,9 @@ import SwiftUI
 struct RootView: View {
   var body: some View {
     TabView {
+      SocialFeed().tabItem {
+        Label("Feed", systemImage: "globe")
+      }
       RecordDrive().tabItem {
         Label("Record", systemImage: "steeringwheel")
       }
