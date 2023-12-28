@@ -8,7 +8,7 @@ struct SocialFeed: View {
     List {
       ForEach(viewModel.drivePosts) { drive in
         VStack(alignment: .leading) {
-          Text(drive.name)
+          Text(drive.name).font(.title2)
           Map(interactionModes: []) {
             MapPolyline(coordinates: drive.route)
               .stroke(
@@ -19,7 +19,7 @@ struct SocialFeed: View {
                   lineJoin: .round
                 )
               )
-          }.frame(width: 120, height: 90)
+          }.frame(height: 160)
             .allowsHitTesting(false)
             .cornerRadius(8.0)
             .shadow(radius: 1.0)
