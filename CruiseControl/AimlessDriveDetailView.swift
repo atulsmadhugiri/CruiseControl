@@ -30,6 +30,17 @@ struct AimlessDriveDetailView: View {
       HStack {
         Spacer()
         Button {
+          let drivePost: DrivePost = DrivePost(
+            name: aimlessDrive.name,
+            description: "DEBUG DESCRIPTION",
+            startTime: aimlessDrive.startTime,
+            endTime: aimlessDrive.endTime,
+            route: aimlessDrive.route,
+            distanceTraveled: aimlessDrive.distanceTraveled)
+
+          Task {
+            await drivePost.saveDrivePost()
+          }
         } label: {
           Label("DEBUG: Publish to PublicDB", systemImage: "ladybug.fill")
             .frame(maxWidth: .infinity)
