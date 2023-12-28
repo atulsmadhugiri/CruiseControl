@@ -57,3 +57,16 @@ extension DrivePost {
       distanceTraveled: distanceTraveled)
   }
 }
+
+extension DrivePost {
+  func saveDrivePost() async {
+    do {
+      let record = self.toCKRecord()
+      let publicDatabase = CKContainer.default().publicCloudDatabase
+      let _ = try await publicDatabase.save(record)
+      print("DrivePost saved successfully!")
+    } catch {
+      print("Error saving DrivePost: \(error.localizedDescription)")
+    }
+  }
+}
