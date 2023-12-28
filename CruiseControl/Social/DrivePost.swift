@@ -24,8 +24,8 @@ extension DrivePost {
     record["endTime"] = endTime as CKRecordValue
     record["distanceTraveled"] = distanceTraveled as CKRecordValue
 
-    let routeData = route.map { ["latitude": $0.latitude, "longitude": $0.longitude] }
-    record["route"] = routeData as CKRecordValue
+    let routeStrings = route.map { "\($0.latitude),\($0.longitude)" }
+    record["route"] = routeStrings as CKRecordValue
 
     return record
   }
