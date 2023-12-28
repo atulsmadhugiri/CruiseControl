@@ -26,6 +26,20 @@ struct AimlessDriveDetailView: View {
             .cornerRadius(4)
         }
       }
+    }.safeAreaInset(edge: .bottom) {
+      HStack {
+        Spacer()
+        Button {
+        } label: {
+          Label("DEBUG: Publish to PublicDB", systemImage: "ladybug.fill")
+            .frame(maxWidth: .infinity)
+            .frame(height: 40)
+            .font(.system(size: 16.0, weight: .bold, design: .monospaced))
+        }.buttonStyle(.borderedProminent)
+          .tint(.secondary)
+          .padding()
+        Spacer()
+      }.background(.thinMaterial)
     }
   }
 }
