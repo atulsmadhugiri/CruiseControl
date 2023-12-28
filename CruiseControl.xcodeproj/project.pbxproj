@@ -18,6 +18,7 @@
 		B72FD0F92B3505B40061B368 /* CoordinatePlacemarkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72FD0F82B3505B40061B368 /* CoordinatePlacemarkData.swift */; };
 		B771B0132B3415FC00C6623F /* AimlessDrive.swift in Sources */ = {isa = PBXBuildFile; fileRef = B771B0122B3415FC00C6623F /* AimlessDrive.swift */; };
 		B78BAED22B384878005DFD44 /* AimlessDriveListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78BAED12B384878005DFD44 /* AimlessDriveListCell.swift */; };
+		B78CDE532B3D7C6E000FBE52 /* DrivePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78CDE522B3D7C6E000FBE52 /* DrivePost.swift */; };
 		B7EB858A2B3702AF00D050CD /* EarlyBirdBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB85892B3702AF00D050CD /* EarlyBirdBadge.swift */; };
 		B7EB858F2B3707E300D050CD /* GasGuzzlerBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB858E2B3707E300D050CD /* GasGuzzlerBadge.swift */; };
 		B7EB85912B3708A700D050CD /* SlowPokeBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB85902B3708A700D050CD /* SlowPokeBadge.swift */; };
@@ -51,6 +52,7 @@
 		B72FD0F82B3505B40061B368 /* CoordinatePlacemarkData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatePlacemarkData.swift; sourceTree = "<group>"; };
 		B771B0122B3415FC00C6623F /* AimlessDrive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AimlessDrive.swift; sourceTree = "<group>"; };
 		B78BAED12B384878005DFD44 /* AimlessDriveListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AimlessDriveListCell.swift; sourceTree = "<group>"; };
+		B78CDE522B3D7C6E000FBE52 /* DrivePost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrivePost.swift; sourceTree = "<group>"; };
 		B7EB85892B3702AF00D050CD /* EarlyBirdBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarlyBirdBadge.swift; sourceTree = "<group>"; };
 		B7EB858E2B3707E300D050CD /* GasGuzzlerBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasGuzzlerBadge.swift; sourceTree = "<group>"; };
 		B7EB85902B3708A700D050CD /* SlowPokeBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlowPokeBadge.swift; sourceTree = "<group>"; };
@@ -83,6 +85,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B78CDE512B3D7C5C000FBE52 /* Social */ = {
+			isa = PBXGroup;
+			children = (
+				B78CDE522B3D7C6E000FBE52 /* DrivePost.swift */,
+			);
+			path = Social;
+			sourceTree = "<group>";
+		};
 		B7EB858B2B37052100D050CD /* AchievementBadges */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +133,7 @@
 		B7FFC3372B34151500F0BC27 /* CruiseControl */ = {
 			isa = PBXGroup;
 			children = (
+				B78CDE512B3D7C5C000FBE52 /* Social */,
 				B7EB858B2B37052100D050CD /* AchievementBadges */,
 				B7FFC3382B34151500F0BC27 /* CruiseControlApp.swift */,
 				B7FFC33E2B34151600F0BC27 /* Assets.xcassets */,
@@ -266,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7FFC33B2B34151500F0BC27 /* AimlessDriveList.swift in Sources */,
+				B78CDE532B3D7C6E000FBE52 /* DrivePost.swift in Sources */,
 				B7EB858F2B3707E300D050CD /* GasGuzzlerBadge.swift in Sources */,
 				9DCE276B2B383054008DCD85 /* AchievementsView.swift in Sources */,
 				B72FD0F92B3505B40061B368 /* CoordinatePlacemarkData.swift in Sources */,
