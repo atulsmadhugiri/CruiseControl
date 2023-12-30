@@ -21,7 +21,9 @@ class SocialFeedViewModel: ObservableObject {
           print("Error fetching record: \(error.localizedDescription)")
         }
       }
-      drivePosts = newPosts
+      if !newPosts.elementsEqual(drivePosts) {
+        drivePosts = newPosts
+      }
     } catch {
       print("Error fetching records: \(error.localizedDescription)")
     }

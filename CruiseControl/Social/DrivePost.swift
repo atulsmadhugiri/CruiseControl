@@ -19,7 +19,8 @@ struct DrivePost: Identifiable {
     startTime: Date,
     endTime: Date,
     route: [CLLocationCoordinate2D],
-    distanceTraveled: CLLocationDistance
+    distanceTraveled: CLLocationDistance,
+    recordID: CKRecord.ID? = nil
   ) {
     self.id = UUID()
     self.name = name
@@ -28,6 +29,7 @@ struct DrivePost: Identifiable {
     self.endTime = endTime
     self.route = route
     self.distanceTraveled = distanceTraveled
+    self.recordID = recordID
   }
 }
 
@@ -73,7 +75,8 @@ extension DrivePost {
       startTime: startTime,
       endTime: endTime,
       route: route,
-      distanceTraveled: distanceTraveled)
+      distanceTraveled: distanceTraveled,
+      recordID: record.recordID)
   }
 }
 
@@ -87,5 +90,11 @@ extension DrivePost {
     } catch {
       print("Error saving DrivePost: \(error.localizedDescription)")
     }
+  }
+}
+
+extension DrivePost: Equatable {
+  static func == (lhs: DrivePost, rhs: DrivePost) -> Bool {
+    lhs.recordID == rhs.recordID
   }
 }
