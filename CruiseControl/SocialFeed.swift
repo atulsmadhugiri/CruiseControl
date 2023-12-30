@@ -8,6 +8,16 @@ struct SocialFeed: View {
     List {
       ForEach(viewModel.drivePosts) { drive in
         VStack(alignment: .leading) {
+
+          HStack {
+            Circle().fill(Color.blue).frame(width: 40)
+            VStack(alignment: .leading) {
+              Text("Atul Madhugiri")
+              Text(drive.endTime.formatted(date: .abbreviated, time: .shortened))
+                .font(.system(size: 12, design: .rounded))
+            }
+          }
+
           Text(drive.name).font(.title2)
           Map(interactionModes: []) {
             MapPolyline(coordinates: drive.route)
@@ -19,11 +29,12 @@ struct SocialFeed: View {
                   lineJoin: .round
                 )
               )
-          }.frame(height: 160)
+          }.frame(height: 200)
             .allowsHitTesting(false)
             .cornerRadius(8.0)
             .shadow(radius: 1.0)
         }
+
       }
     }.listStyle(.plain).onAppear {
       Task {
