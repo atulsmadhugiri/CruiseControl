@@ -82,6 +82,7 @@ struct RecordDrive: View {
             }.buttonStyle(.borderedProminent)
               .presentationDetents([.fraction(0.20)])
               .presentationDragIndicator(.visible)
+              .tint(.green)
           }
         Spacer()
       }.background(.thinMaterial)
