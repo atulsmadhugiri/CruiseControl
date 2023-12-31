@@ -10,6 +10,7 @@ struct RecordDrive: View {
   @State private var showingConfirmationSheet = false
 
   @State private var driveName = ""
+  @State private var driveDetails = ""
 
   @State private var position: MapCameraPosition = .userLocation(fallback: .automatic)
 
@@ -68,10 +69,12 @@ struct RecordDrive: View {
             TextField("Name", text: $driveName).frame(
               width: 360
             ).textFieldStyle(.roundedBorder)
+            TextField("Details", text: $driveDetails, axis: .vertical).frame(width: 360)
+              .textFieldStyle(.roundedBorder).lineLimit(3, reservesSpace: true)
             Button {
               let aimlessDrive = AimlessDrive(
                 name: driveName,
-                details: "INSERT DRIVE DETAILS HERE",
+                details: driveDetails,
                 startTime: startTime,
                 endTime: Date(),
                 route: locationFetcher.route,
@@ -81,7 +84,7 @@ struct RecordDrive: View {
             } label: {
               Label("Save drive", systemImage: "checkmark.circle.fill")
             }.buttonStyle(.borderedProminent)
-              .presentationDetents([.fraction(0.20)])
+              .presentationDetents([.fraction(0.26)])
               .presentationDragIndicator(.visible)
               .tint(.green)
           }
