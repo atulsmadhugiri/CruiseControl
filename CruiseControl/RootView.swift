@@ -15,6 +15,9 @@ struct RootView: View {
       AchievementsView().tabItem {
         Label("Achievements", systemImage: "trophy.fill")
       }
+      ProfileView().tabItem {
+        Label("Profile", systemImage: "person.fill")
+      }
     }
   }
 }
