@@ -34,6 +34,7 @@ extension CLLocation {
 @Model
 final class AimlessDrive {
   var name: String = ""
+  var details: String = ""
   var startTime: Date = Date()
   var endTime: Date = Date()
   var route: [CLLocationCoordinate2D] = []
@@ -41,12 +42,14 @@ final class AimlessDrive {
 
   init(
     name: String,
+    details: String,
     startTime: Date,
     endTime: Date,
     route: [CLLocationCoordinate2D],
     distanceTraveled: CLLocationDistance
   ) {
     self.name = name
+    self.details = details
     self.startTime = startTime
     self.endTime = endTime
     self.route = route

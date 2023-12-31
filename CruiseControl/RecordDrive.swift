@@ -71,6 +71,7 @@ struct RecordDrive: View {
             Button {
               let aimlessDrive = AimlessDrive(
                 name: driveName,
+                details: "INSERT DRIVE DETAILS HERE",
                 startTime: startTime,
                 endTime: Date(),
                 route: locationFetcher.route,
