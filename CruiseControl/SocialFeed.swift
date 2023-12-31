@@ -23,8 +23,8 @@ struct SocialFeed: View {
             }
           }
 
-          Text(drive.name).font(.title2).fontWeight(.bold)
-          Text(drive.description).font(.subheadline)
+          Text(drive.name).font(.title3).fontWeight(.semibold)
+          Text(drive.description).font(.footnote)
 
           Map(interactionModes: []) {
             MapPolyline(coordinates: drive.route)
