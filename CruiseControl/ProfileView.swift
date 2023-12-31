@@ -98,6 +98,25 @@ struct ProfilePictureContent: View {
   }
 }
 
+struct ProfilePicture: View {
+  let imageState: ProfileViewModel.ImageState
+
+  var body: some View {
+    ProfilePictureContent(imageState: imageState)
+      .scaledToFill()
+      .clipShape(RoundedRectangle(cornerRadius: 8))
+      .frame(width: 100, height: 100)
+      .background {
+        RoundedRectangle(cornerRadius: 8)
+          .fill(
+            LinearGradient(
+              colors: [.blue, .gray],
+              startPoint: .top,
+              endPoint: .bottom))
+      }
+  }
+}
+
 struct ProfileView: View {
   @State private var avatarSelection: PhotosPickerItem?
   @State private var avatarImage: Image?
