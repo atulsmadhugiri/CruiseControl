@@ -18,8 +18,7 @@ struct SocialFeed: View {
 
             VStack(alignment: .leading) {
               HStack {
-                Text("Atul")
-                Text("Madhugiri").redacted(reason: .placeholder)
+                Text("Atul Madhugiri")
                 Image(systemName: "checkmark.seal.fill")
                   .foregroundColor(.yellow)
                   .frame(width: 12)
