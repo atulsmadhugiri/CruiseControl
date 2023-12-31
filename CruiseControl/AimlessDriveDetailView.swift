@@ -32,7 +32,7 @@ struct AimlessDriveDetailView: View {
         Button {
           let drivePost: DrivePost = DrivePost(
             name: aimlessDrive.name,
-            description: "DEBUG DESCRIPTION",
+            description: aimlessDrive.details,
             startTime: aimlessDrive.startTime,
             endTime: aimlessDrive.endTime,
             route: aimlessDrive.route,
