@@ -17,7 +17,14 @@ struct SocialFeed: View {
             }
 
             VStack(alignment: .leading) {
-              Text("Atul Madhugiri")
+              HStack {
+                Text("Atul")
+                Text("Madhugiri").redacted(reason: .placeholder)
+                Image(systemName: "checkmark.seal.fill")
+                  .foregroundColor(.yellow)
+                  .frame(width: 12)
+                  .font(.system(size: 14))
+              }
               Text(drive.endTime.formatted(date: .abbreviated, time: .shortened))
                 .font(.system(size: 12, design: .rounded))
             }
