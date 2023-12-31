@@ -72,6 +72,32 @@ class ProfileViewModel: ObservableObject {
   }
 }
 
+struct ProfilePictureContent: View {
+  let imageState: ProfileViewModel.ImageState
+
+  var body: some View {
+    switch imageState {
+
+    case .empty:
+      Image(systemName: "person.fill")
+        .font(.system(size: 40))
+        .foregroundColor(.white)
+
+    case .failure(let error):
+      Image(systemName: "exclamationmark.triangle.fill")
+        .font(.system(size: 40))
+        .foregroundColor(.white)
+
+    case .loading(let progress):
+      ProgressView()
+
+    case .success(let image):
+      image.resizable()
+
+    }
+  }
+}
+
 struct ProfileView: View {
   @State private var avatarSelection: PhotosPickerItem?
   @State private var avatarImage: Image?
