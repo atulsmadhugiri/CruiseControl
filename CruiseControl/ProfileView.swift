@@ -83,12 +83,12 @@ struct ProfilePictureContent: View {
         .font(.system(size: 40))
         .foregroundColor(.white)
 
-    case .failure(let error):
+    case .failure(_):
       Image(systemName: "exclamationmark.triangle.fill")
         .font(.system(size: 40))
         .foregroundColor(.white)
 
-    case .loading(let progress):
+    case .loading(_):
       ProgressView()
 
     case .success(let image):
