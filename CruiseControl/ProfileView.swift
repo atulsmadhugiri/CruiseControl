@@ -93,7 +93,7 @@ struct ProfileView: View {
             .frame(maxWidth: .infinity)
             .frame(height: 40)
             .font(.title3)
-        }.buttonStyle(.borderless)
+        }.buttonStyle(.borderedProminent)
           .tint(.blue)
           .backgroundStyle(.blue)
 
