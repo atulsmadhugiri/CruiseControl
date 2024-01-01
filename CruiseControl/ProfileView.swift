@@ -65,26 +65,39 @@ struct ProfileView: View {
   @StateObject var viewModel = ProfileViewModel()
 
   var body: some View {
-    Form {
-      Section {
-        HStack {
-          Spacer()
-          EditableProfilePicture(viewModel: viewModel)
-          Spacer()
+    VStack {
+      Form {
+        Section {
+          HStack {
+            Spacer()
+            EditableProfilePicture(viewModel: viewModel)
+            Spacer()
+          }
         }
-      }
 
-      Section {
-        TextField("First Name", text: $viewModel.firstName, prompt: Text("First Name"))
-        TextField("Last Name", text: $viewModel.lastName, prompt: Text("Last Name"))
-      }
+        Section {
+          TextField("First Name", text: $viewModel.firstName, prompt: Text("First Name"))
+          TextField("Last Name", text: $viewModel.lastName, prompt: Text("Last Name"))
+        }
 
-      Section {
-        TextField(
-          "Biography", text: $viewModel.biography, prompt: Text("Biography"), axis: .vertical
-        ).lineLimit(3, reservesSpace: true)
-      }
+        Section {
+          TextField(
+            "Biography", text: $viewModel.biography, prompt: Text("Biography"), axis: .vertical
+          ).lineLimit(3, reservesSpace: true)
+        }
 
+        Button {
+          print("UNIMPLEMENTED")
+        } label: {
+          Text("Update profile")
+            .frame(maxWidth: .infinity)
+            .frame(height: 40)
+            .font(.title3)
+        }.buttonStyle(.borderless)
+          .tint(.blue)
+          .backgroundStyle(.blue)
+
+      }
     }
   }
 }
