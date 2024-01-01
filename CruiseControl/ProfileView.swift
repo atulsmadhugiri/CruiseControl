@@ -87,7 +87,13 @@ struct ProfileView: View {
         }
 
         Button {
-          print("UNIMPLEMENTED")
+          let userProfile: UserProfile = UserProfile(
+            firstName: viewModel.firstName,
+            lastName: viewModel.lastName,
+            biography: viewModel.biography)
+          Task {
+            await userProfile.saveUserProfile()
+          }
         } label: {
           Text("Update profile")
             .frame(maxWidth: .infinity)
