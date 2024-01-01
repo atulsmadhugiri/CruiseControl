@@ -30,3 +30,16 @@ extension UserProfile {
     return record
   }
 }
+
+extension UserProfile {
+  func saveUserProfile() async {
+    do {
+      let record = self.toCKRecord()
+      let publicDatabase = CKContainer.default().publicCloudDatabase
+      let _ = try await publicDatabase.save(record)
+      print("UserProfile saved successfully!")
+    } catch {
+      print("Error saving UserProfile: \(error.localizedDescription)")
+    }
+  }
+}
