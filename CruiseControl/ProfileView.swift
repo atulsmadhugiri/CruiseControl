@@ -133,7 +133,7 @@ struct EditableProfilePicture: View {
 
 struct ProfileView: View {
   @StateObject var viewModel = ProfileViewModel()
-  
+
   var body: some View {
     Form {
       Section {
@@ -143,6 +143,18 @@ struct ProfileView: View {
           Spacer()
         }
       }
+
+      Section {
+        TextField("First Name", text: $viewModel.firstName, prompt: Text("First Name"))
+        TextField("Last Name", text: $viewModel.lastName, prompt: Text("Last Name"))
+      }
+
+      Section {
+        TextField(
+          "Biography", text: $viewModel.biography, prompt: Text("Biography"), axis: .vertical
+        ).lineLimit(3, reservesSpace: true)
+      }
+
     }
   }
 }
