@@ -93,7 +93,9 @@ struct ProfilePictureContent: View {
 
     case .success(let image):
       image.resizable()
-
+        .aspectRatio(contentMode: .fill)
+        .frame(width: 100, height: 100)
+        .clipped()
     }
   }
 }
@@ -103,16 +105,11 @@ struct ProfilePicture: View {
 
   var body: some View {
     ProfilePictureContent(imageState: imageState)
-      .scaledToFill()
       .clipShape(RoundedRectangle(cornerRadius: 8))
       .frame(width: 100, height: 100)
       .background {
         RoundedRectangle(cornerRadius: 8)
-          .fill(
-            LinearGradient(
-              colors: [.blue, .gray],
-              startPoint: .top,
-              endPoint: .bottom))
+          .fill(.mint)
       }
   }
 }
@@ -135,19 +132,17 @@ struct EditableProfilePicture: View {
 }
 
 struct ProfileView: View {
-  @State private var avatarSelection: PhotosPickerItem?
-  @State private var avatarImage: Image?
-
+  @StateObject var viewModel = ProfileViewModel()
+  
   var body: some View {
-    VStack {
-      PhotosPicker(
-        "Select profile picture", selection: $avatarSelection,
-        matching: .all(of: [.images, .not(.livePhotos)]))
-
-      avatarImage?.resizable().scaledToFit().frame(width: 300, height: 300)
-
-    }.task(id: avatarSelection) {
-      avatarImage = try? await avatarSelection?.loadTransferable(type: Image.self)
+    Form {
+      Section {
+        HStack {
+          Spacer()
+          EditableProfilePicture(viewModel: viewModel)
+          Spacer()
+        }
+      }
     }
   }
 }
