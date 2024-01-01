@@ -117,6 +117,23 @@ struct ProfilePicture: View {
   }
 }
 
+struct EditableProfilePicture: View {
+  @ObservedObject var viewModel: ProfileViewModel
+
+  var body: some View {
+    ProfilePicture(imageState: viewModel.imageState).overlay(alignment: .bottomTrailing) {
+      PhotosPicker(
+        selection: $viewModel.imageSelection, matching: .all(of: [.images, .not(.livePhotos)]),
+        photoLibrary: .shared()
+      ) {
+        Image(systemName: "pencil.circle.fill").symbolRenderingMode(.multicolor).font(
+          .system(size: 30)
+        ).foregroundColor(.blue)
+      }.buttonStyle(.borderless)
+    }
+  }
+}
+
 struct ProfileView: View {
   @State private var avatarSelection: PhotosPickerItem?
   @State private var avatarImage: Image?
