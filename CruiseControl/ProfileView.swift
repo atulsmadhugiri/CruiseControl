@@ -6,8 +6,8 @@ struct ProfilePictureContent: View {
   let imageState: ProfileViewModel.ImageState
 
   var body: some View {
-    switch imageState {
 
+    switch imageState {
     case .empty:
       Image(systemName: "person.fill")
         .font(.system(size: 40))
@@ -22,11 +22,15 @@ struct ProfilePictureContent: View {
       ProgressView()
 
     case .success(let image):
-      image.resizable()
-        .aspectRatio(contentMode: .fill)
-        .frame(width: 100, height: 100)
-        .clipped()
+      if let uiImage = UIImage(data: image) {
+        Image(uiImage: uiImage).resizable().aspectRatio(contentMode: .fill).frame(
+          width: 100, height: 100
+        ).clipped()
+      } else {
+        ProgressView()
+      }
     }
+
   }
 }
 

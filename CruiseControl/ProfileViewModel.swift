@@ -11,7 +11,7 @@ class ProfileViewModel: ObservableObject {
   enum ImageState {
     case empty
     case loading(Progress)
-    case success(Image)
+    case success(Data)
     case failure(Error)
   }
 
@@ -22,18 +22,11 @@ class ProfileViewModel: ObservableObject {
   }
 
   struct ProfileImage: Transferable {
-    let image: Image
+    let image: Data
 
     static var transferRepresentation: some TransferRepresentation {
       DataRepresentation(importedContentType: .image) { data in
-
-        guard let uiImage = UIImage(data: data) else {
-          throw TransferError.importFailed
-        }
-
-        let image = Image(uiImage: uiImage)
-        return ProfileImage(image: image)
-
+        return ProfileImage(image: data)
       }
     }
   }
