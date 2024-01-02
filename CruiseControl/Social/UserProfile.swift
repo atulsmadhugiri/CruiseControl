@@ -31,7 +31,7 @@ extension UserProfile {
   }
 }
 
-func potentiallyGetExistingUserProfileRecord() async -> CKRecord.ID? {
+func potentiallyGetExistingUserProfileRecord() async -> CKRecord? {
   do {
     let userRecordID = try await CKContainer.default().userRecordID()
     let publicDatabase = CKContainer.default().publicCloudDatabase
@@ -43,8 +43,14 @@ func potentiallyGetExistingUserProfileRecord() async -> CKRecord.ID? {
     query.sortDescriptors = [sortDescriptor]
 
     let (matchResults, _) = try await publicDatabase.records(matching: query)
-    guard let (firstResultID, _) = matchResults.first else { return nil }
-    return firstResultID
+    guard let (_, matchedRecord) = matchResults.first else { return nil }
+
+    switch matchedRecord {
+    case .success(let record):
+      return record
+    case .failure(_):
+      return nil
+    }
   } catch {
     print("Error potentially fetching UserProfile: \(error.localizedDescription)")
     return nil
