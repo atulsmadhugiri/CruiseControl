@@ -31,6 +31,26 @@ extension UserProfile {
   }
 }
 
+func potentiallyGetExistingUserProfileRecord() async -> CKRecord.ID? {
+  do {
+    let userRecordID = try await CKContainer.default().userRecordID()
+    let publicDatabase = CKContainer.default().publicCloudDatabase
+    let reference = CKRecord.Reference(recordID: userRecordID, action: .none)
+    let predicate = NSPredicate(format: "creatorUserRecordID == %@", reference)
+    let sortDescriptor = NSSortDescriptor(key: "creationDate", ascending: false)
+
+    let query = CKQuery(recordType: "UserProfileAlpha", predicate: predicate)
+    query.sortDescriptors = [sortDescriptor]
+
+    let (matchResults, _) = try await publicDatabase.records(matching: query)
+    guard let (firstResultID, _) = matchResults.first else { return nil }
+    return firstResultID
+  } catch {
+    print("Error potentially fetching UserProfile: \(error.localizedDescription)")
+    return nil
+  }
+}
+
 extension UserProfile {
   func saveUserProfile() async {
     do {
