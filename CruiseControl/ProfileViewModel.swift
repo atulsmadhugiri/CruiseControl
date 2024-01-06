@@ -9,6 +9,20 @@ enum ImageState {
   case failure(Error)
 }
 
+enum TransferError: Error {
+  case importFailed
+}
+
+struct TransferableProfileImage: Transferable {
+  let image: Data
+
+  static var transferRepresentation: some TransferRepresentation {
+    DataRepresentation(importedContentType: .image) { data in
+      return TransferableProfileImage(image: data)
+    }
+  }
+}
+
 @MainActor
 class ProfileViewModel: ObservableObject {
   @Published var firstName: String = ""
@@ -16,20 +30,6 @@ class ProfileViewModel: ObservableObject {
   @Published var biography: String = ""
 
   @Published private(set) var imageState: ImageState = .empty
-
-  enum TransferError: Error {
-    case importFailed
-  }
-
-  struct ProfileImage: Transferable {
-    let image: Data
-
-    static var transferRepresentation: some TransferRepresentation {
-      DataRepresentation(importedContentType: .image) { data in
-        return ProfileImage(image: data)
-      }
-    }
-  }
 
   @Published var imageSelection: PhotosPickerItem? = nil {
     didSet {
@@ -43,7 +43,7 @@ class ProfileViewModel: ObservableObject {
   }
 
   private func loadTransferable(from imageSelection: PhotosPickerItem) -> Progress {
-    return imageSelection.loadTransferable(type: ProfileImage.self) { result in
+    return imageSelection.loadTransferable(type: TransferableProfileImage.self) { result in
 
       DispatchQueue.main.async {
         guard imageSelection == self.imageSelection else {
