@@ -3,7 +3,7 @@ import PhotosUI
 import SwiftUI
 
 struct ProfilePictureContent: View {
-  let imageState: ProfileViewModel.ImageState
+  let imageState: ImageState
 
   var body: some View {
 
@@ -35,7 +35,7 @@ struct ProfilePictureContent: View {
 }
 
 struct ProfilePicture: View {
-  let imageState: ProfileViewModel.ImageState
+  let imageState: ImageState
 
   var body: some View {
     ProfilePictureContent(imageState: imageState)

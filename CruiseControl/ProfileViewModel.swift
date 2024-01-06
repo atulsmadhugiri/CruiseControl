@@ -2,18 +2,18 @@ import Foundation
 import PhotosUI
 import SwiftUI
 
+enum ImageState {
+  case empty
+  case loading(Progress)
+  case success(Data)
+  case failure(Error)
+}
+
 @MainActor
 class ProfileViewModel: ObservableObject {
   @Published var firstName: String = ""
   @Published var lastName: String = ""
   @Published var biography: String = ""
-
-  enum ImageState {
-    case empty
-    case loading(Progress)
-    case success(Data)
-    case failure(Error)
-  }
 
   @Published private(set) var imageState: ImageState = .empty
 
