@@ -27,6 +27,10 @@ extension UserProfile {
     record["lastName"] = lastName as CKRecordValue
     record["biography"] = biography as CKRecordValue
 
+    if let profilePicture = profilePicture {
+      record["profilePicture"] = CKAsset(fileURL: profilePicture)
+    }
+
     return record
   }
 }
