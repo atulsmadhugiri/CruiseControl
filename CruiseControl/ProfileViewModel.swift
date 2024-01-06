@@ -43,6 +43,8 @@ class ProfileViewModel: ObservableObject {
     }
   }
 
+  @Published var hasUserFetchBeenAttempted: Bool = false
+
   private func loadTransferable(from imageSelection: PhotosPickerItem) -> Progress {
     return imageSelection.loadTransferable(type: TransferableProfileImage.self) { result in
 
@@ -88,6 +90,8 @@ class ProfileViewModel: ObservableObject {
           }
         }
       }
+
+      self.hasUserFetchBeenAttempted = true
 
     }
   }

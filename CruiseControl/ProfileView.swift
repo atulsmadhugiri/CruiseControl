@@ -43,7 +43,6 @@ struct ProfilePicture: View {
       .frame(width: 100, height: 100)
       .background {
         RoundedRectangle(cornerRadius: 8)
-          .fill(.mint)
       }
   }
 }
@@ -74,7 +73,8 @@ struct ProfileView: View {
         Section {
           HStack {
             Spacer()
-            EditableProfilePicture(viewModel: viewModel)
+            EditableProfilePicture(viewModel: viewModel).redacted(
+              reason: !viewModel.hasUserFetchBeenAttempted ? .placeholder : [])
             Spacer()
           }
         }
@@ -82,13 +82,13 @@ struct ProfileView: View {
         Section {
           TextField("First Name", text: $viewModel.firstName, prompt: Text("First Name"))
           TextField("Last Name", text: $viewModel.lastName, prompt: Text("Last Name"))
-        }
+        }.redacted(reason: !viewModel.hasUserFetchBeenAttempted ? .placeholder : [])
 
         Section {
           TextField(
             "Biography", text: $viewModel.biography, prompt: Text("Biography"), axis: .vertical
           ).lineLimit(3, reservesSpace: true)
-        }
+        }.redacted(reason: !viewModel.hasUserFetchBeenAttempted ? .placeholder : [])
 
         Button {
           var imageURL: URL? = nil
