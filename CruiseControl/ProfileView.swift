@@ -10,8 +10,7 @@ struct ProfilePictureContent: View {
     switch imageState {
     case .empty:
       Image(systemName: "person.fill")
-        .font(.system(size: 40))
-        .foregroundColor(.white)
+        .font(.system(size: 100))
 
     case .failure(_):
       Image(systemName: "exclamationmark.triangle.fill")
@@ -39,11 +38,8 @@ struct ProfilePicture: View {
 
   var body: some View {
     ProfilePictureContent(imageState: imageState)
-      .clipShape(RoundedRectangle(cornerRadius: 8))
       .frame(width: 100, height: 100)
-      .background {
-        RoundedRectangle(cornerRadius: 8)
-      }
+      .cornerRadius(8)
   }
 }
 
