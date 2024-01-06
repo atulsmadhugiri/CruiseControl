@@ -137,6 +137,10 @@ struct ProfileView: View {
           .backgroundStyle(.blue)
 
       }
+    }.onAppear {
+      Task {
+        await viewModel.fetchUserProfile()
+      }
     }
   }
 }
