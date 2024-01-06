@@ -79,7 +79,8 @@ extension DrivePost {
       endTime: endTime,
       route: route,
       distanceTraveled: distanceTraveled,
-      recordID: record.recordID)
+      recordID: record.recordID,
+      creator: record.creatorUserRecordID)
   }
 }
 
