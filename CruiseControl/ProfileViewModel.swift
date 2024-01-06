@@ -1,3 +1,4 @@
+import CloudKit
 import Foundation
 import PhotosUI
 import SwiftUI
@@ -75,6 +76,19 @@ class ProfileViewModel: ObservableObject {
       if let biography = existingRecord.value(forKey: "biography") as? String {
         self.biography = biography
       }
+
+      if let profilePicture = existingRecord.value(forKey: "profilePicture") as? CKAsset {
+        let fileURL = profilePicture.fileURL
+        if let fileURL {
+          do {
+            let fileData = try Data(contentsOf: fileURL)
+            self.imageState = .success(fileData)
+          } catch {
+            print("Error retrieving profilePicture: \(error.localizedDescription)")
+          }
+        }
+      }
+
     }
   }
 }
