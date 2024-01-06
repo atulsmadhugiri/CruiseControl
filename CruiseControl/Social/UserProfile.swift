@@ -64,9 +64,22 @@ func potentiallyGetExistingUserProfileRecord() async -> CKRecord? {
 extension UserProfile {
   func saveUserProfile() async {
     do {
-      let record = self.toCKRecord()
-      let publicDatabase = CKContainer.default().publicCloudDatabase
-      let _ = try await publicDatabase.save(record)
+
+      if let existingRecord = await potentiallyGetExistingUserProfileRecord() {
+        existingRecord["firstName"] = firstName as CKRecordValue
+        existingRecord["lastName"] = lastName as CKRecordValue
+        existingRecord["biography"] = biography as CKRecordValue
+        if let profilePicture = profilePicture {
+          existingRecord["profilePicture"] = CKAsset(fileURL: profilePicture)
+        }
+        let publicDatabase = CKContainer.default().publicCloudDatabase
+        let _ = try await publicDatabase.save(existingRecord)
+
+      } else {
+        let record = self.toCKRecord()
+        let publicDatabase = CKContainer.default().publicCloudDatabase
+        let _ = try await publicDatabase.save(record)
+      }
       print("UserProfile saved successfully!")
     } catch {
       print("Error saving UserProfile: \(error.localizedDescription)")
