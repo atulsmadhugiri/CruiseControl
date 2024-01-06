@@ -4,6 +4,7 @@ import CoreLocation
 struct DrivePost: Identifiable {
   let id: UUID
   var recordID: CKRecord.ID?
+  var creator: CKRecord.ID?
 
   var name: String
   var description: String
@@ -20,7 +21,8 @@ struct DrivePost: Identifiable {
     endTime: Date,
     route: [CLLocationCoordinate2D],
     distanceTraveled: CLLocationDistance,
-    recordID: CKRecord.ID? = nil
+    recordID: CKRecord.ID? = nil,
+    creator: CKRecord.ID? = nil
   ) {
     self.id = UUID()
     self.name = name
@@ -30,6 +32,7 @@ struct DrivePost: Identifiable {
     self.route = route
     self.distanceTraveled = distanceTraveled
     self.recordID = recordID
+    self.creator = creator
   }
 }
 
