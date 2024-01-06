@@ -56,9 +56,12 @@ struct EditableProfilePicture: View {
         selection: $viewModel.imageSelection, matching: .all(of: [.images, .not(.livePhotos)]),
         photoLibrary: .shared()
       ) {
-        Image(systemName: "pencil.circle.fill").symbolRenderingMode(.multicolor).font(
-          .system(size: 30)
-        ).foregroundColor(.blue)
+        if viewModel.hasUserFetchBeenAttempted {
+          Image(systemName: "pencil.circle.fill")
+            .symbolRenderingMode(.multicolor)
+            .font(.system(size: 30))
+            .foregroundColor(.blue)
+        }
       }.buttonStyle(.borderless)
     }
   }
