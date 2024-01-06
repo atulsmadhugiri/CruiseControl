@@ -133,8 +133,8 @@ struct ProfileView: View {
             .font(.title3)
         }.buttonStyle(.borderedProminent)
           .tint(.blue)
-          .backgroundStyle(.blue)
-
+          .backgroundStyle(.blue).redacted(
+            reason: !viewModel.hasUserFetchBeenAttempted ? .placeholder : [])
       }
     }.onAppear {
       Task {
