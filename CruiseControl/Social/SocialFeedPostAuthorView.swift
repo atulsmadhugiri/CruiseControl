@@ -8,16 +8,24 @@ struct SocialFeedPostAuthorView: View {
   @State var lastName: String?
 
   var body: some View {
-    VStack(alignment: .leading) {
-      HStack {
-        Text("\(firstName ?? "Anonymous") \(lastName ?? "")")
-        Image(systemName: "checkmark.seal.fill")
-          .foregroundColor(.yellow)
-          .frame(width: 12)
-          .font(.system(size: 14))
+
+    HStack {
+      AsyncImage(url: URL(string: "https://blob.sh/atul.png")) { image in
+        image.resizable().frame(width: 40, height: 40).cornerRadius(8.0)
+      } placeholder: {
+        Color.gray.opacity(0.1).frame(width: 40, height: 40).cornerRadius(8.0)
       }
-      Text(endTime.formatted(date: .abbreviated, time: .shortened))
-        .font(.system(size: 12, design: .rounded))
+      VStack(alignment: .leading) {
+        HStack {
+          Text("\(firstName ?? "Anonymous") \(lastName ?? "")")
+          Image(systemName: "checkmark.seal.fill")
+            .foregroundColor(.yellow)
+            .frame(width: 12)
+            .font(.system(size: 14))
+        }
+        Text(endTime.formatted(date: .abbreviated, time: .shortened))
+          .font(.system(size: 12, design: .rounded))
+      }
     }.onAppear {
       Task {
         await fetchAuthorProfile()

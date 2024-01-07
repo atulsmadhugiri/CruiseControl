@@ -9,15 +9,7 @@ struct SocialFeed: View {
       ForEach(viewModel.drivePosts) { drive in
         VStack(alignment: .leading) {
 
-          HStack {
-            AsyncImage(url: URL(string: "https://blob.sh/atul.png")) { image in
-              image.resizable().frame(width: 40, height: 40).cornerRadius(8.0)
-            } placeholder: {
-              Color.gray.opacity(0.1).frame(width: 40, height: 40).cornerRadius(8.0)
-            }
-            SocialFeedPostAuthorView(creator: drive.creator, endTime: drive.endTime)
-          }
-
+          SocialFeedPostAuthorView(creator: drive.creator, endTime: drive.endTime)
           Text(drive.name).font(.title3).fontWeight(.semibold)
           Text(drive.description).font(.footnote)
 
