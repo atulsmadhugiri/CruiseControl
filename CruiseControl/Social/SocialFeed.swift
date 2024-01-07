@@ -15,12 +15,7 @@ struct SocialFeed: View {
             } placeholder: {
               Color.gray.opacity(0.1).frame(width: 40, height: 40).cornerRadius(8.0)
             }
-
-            VStack(alignment: .leading) {
-              SocialFeedPostAuthorView(creator: drive.creator)
-              Text(drive.endTime.formatted(date: .abbreviated, time: .shortened))
-                .font(.system(size: 12, design: .rounded))
-            }
+            SocialFeedPostAuthorView(creator: drive.creator, endTime: drive.endTime)
           }
 
           Text(drive.name).font(.title3).fontWeight(.semibold)

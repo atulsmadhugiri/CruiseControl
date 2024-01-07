@@ -3,16 +3,21 @@ import SwiftUI
 
 struct SocialFeedPostAuthorView: View {
   var creator: CKRecord.ID?
+  var endTime: Date
   @State var firstName: String?
   @State var lastName: String?
 
   var body: some View {
-    HStack {
-      Text("\(firstName ?? "Anonymous") \(lastName ?? "")")
-      Image(systemName: "checkmark.seal.fill")
-        .foregroundColor(.yellow)
-        .frame(width: 12)
-        .font(.system(size: 14))
+    VStack(alignment: .leading) {
+      HStack {
+        Text("\(firstName ?? "Anonymous") \(lastName ?? "")")
+        Image(systemName: "checkmark.seal.fill")
+          .foregroundColor(.yellow)
+          .frame(width: 12)
+          .font(.system(size: 14))
+      }
+      Text(endTime.formatted(date: .abbreviated, time: .shortened))
+        .font(.system(size: 12, design: .rounded))
     }.onAppear {
       Task {
         await fetchAuthorProfile()
