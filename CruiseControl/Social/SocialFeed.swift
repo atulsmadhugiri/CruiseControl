@@ -17,7 +17,7 @@ struct SocialFeed: View {
             }
 
             VStack(alignment: .leading) {
-              SocialFeedPostProfileView(creator: drive.creator)
+              SocialFeedPostAuthorView(creator: drive.creator)
               Text(drive.endTime.formatted(date: .abbreviated, time: .shortened))
                 .font(.system(size: 12, design: .rounded))
             }

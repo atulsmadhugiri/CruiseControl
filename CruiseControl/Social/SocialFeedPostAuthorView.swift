@@ -1,7 +1,7 @@
 import CloudKit
 import SwiftUI
 
-struct SocialFeedPostProfileView: View {
+struct SocialFeedPostAuthorView: View {
   var creator: CKRecord.ID?
   var body: some View {
     HStack {
