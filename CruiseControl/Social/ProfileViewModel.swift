@@ -90,9 +90,7 @@ class ProfileViewModel: ObservableObject {
           }
         }
       }
-
-      self.hasUserFetchBeenAttempted = true
-
     }
+    self.hasUserFetchBeenAttempted = true
   }
 }
