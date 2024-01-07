@@ -67,7 +67,7 @@ class ProfileViewModel: ObservableObject {
   }
 
   func fetchUserProfile() async {
-    let existingRecord = await potentiallyGetExistingUserProfileRecord()
+    let existingRecord = await potentiallyGetCurrentUserProfileRecord()
     if let existingRecord {
       if let firstName = existingRecord.value(forKey: "firstName") as? String {
         self.firstName = firstName

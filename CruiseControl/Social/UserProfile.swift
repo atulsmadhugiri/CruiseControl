@@ -35,9 +35,8 @@ extension UserProfile {
   }
 }
 
-func potentiallyGetExistingUserProfileRecord() async -> CKRecord? {
+func potentiallyGetUserProfileRecord(userRecordID: CKRecord.ID) async -> CKRecord? {
   do {
-    let userRecordID = try await CKContainer.default().userRecordID()
     let publicDatabase = CKContainer.default().publicCloudDatabase
     let reference = CKRecord.Reference(recordID: userRecordID, action: .none)
     let predicate = NSPredicate(format: "creatorUserRecordID == %@", reference)
@@ -61,11 +60,21 @@ func potentiallyGetExistingUserProfileRecord() async -> CKRecord? {
   }
 }
 
+func potentiallyGetCurrentUserProfileRecord() async -> CKRecord? {
+  do {
+    let currentUserRecordID = try await CKContainer.default().userRecordID()
+    return await potentiallyGetUserProfileRecord(userRecordID: currentUserRecordID)
+  } catch {
+    print("Error potentially fetching UserProfile: \(error.localizedDescription)")
+    return nil
+  }
+}
+
 extension UserProfile {
   func saveUserProfile() async {
     do {
 
-      if let existingRecord = await potentiallyGetExistingUserProfileRecord() {
+      if let existingRecord = await potentiallyGetCurrentUserProfileRecord() {
         existingRecord["firstName"] = firstName as CKRecordValue
         existingRecord["lastName"] = lastName as CKRecordValue
         existingRecord["biography"] = biography as CKRecordValue
