@@ -102,6 +102,11 @@
 			children = (
 				B78CDE522B3D7C6E000FBE52 /* DrivePost.swift */,
 				B798DA092B429B7C00566AE1 /* UserProfile.swift */,
+				B78CDE542B3D9822000FBE52 /* SocialFeed.swift */,
+				B74F600D2B493F5300F07D51 /* SocialFeedPostProfileView.swift */,
+				B78CDE562B3D990A000FBE52 /* SocialFeedViewModel.swift */,
+				B798D9FE2B415EAC00566AE1 /* ProfileView.swift */,
+				B798DA072B42979300566AE1 /* ProfileViewModel.swift */,
 			);
 			path = Social;
 			sourceTree = "<group>";
@@ -146,7 +151,6 @@
 		B7FFC3372B34151500F0BC27 /* CruiseControl */ = {
 			isa = PBXGroup;
 			children = (
-				B78CDE512B3D7C5C000FBE52 /* Social */,
 				B7EB858B2B37052100D050CD /* AchievementBadges */,
 				B7FFC3382B34151500F0BC27 /* CruiseControlApp.swift */,
 				B7FFC33E2B34151600F0BC27 /* Assets.xcassets */,
@@ -164,11 +168,7 @@
 				B72FD0F22B3434020061B368 /* RootView.swift */,
 				B728BD092B381FC1008C39FC /* RouteUtils.swift */,
 				9DCE276A2B383054008DCD85 /* AchievementsView.swift */,
-				B78CDE542B3D9822000FBE52 /* SocialFeed.swift */,
-				B74F600D2B493F5300F07D51 /* SocialFeedPostProfileView.swift */,
-				B78CDE562B3D990A000FBE52 /* SocialFeedViewModel.swift */,
-				B798D9FE2B415EAC00566AE1 /* ProfileView.swift */,
-				B798DA072B42979300566AE1 /* ProfileViewModel.swift */,
+				B78CDE512B3D7C5C000FBE52 /* Social */,
 			);
 			path = CruiseControl;
 			sourceTree = "<group>";
