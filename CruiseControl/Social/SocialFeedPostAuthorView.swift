@@ -6,11 +6,12 @@ struct SocialFeedPostAuthorView: View {
   var endTime: Date
   @State var firstName: String?
   @State var lastName: String?
+  @State var profilePicture: URL?
 
   var body: some View {
 
     HStack {
-      AsyncImage(url: URL(string: "https://blob.sh/atul.png")) { image in
+      AsyncImage(url: profilePicture) { image in
         image.resizable().frame(width: 40, height: 40).cornerRadius(8.0)
       } placeholder: {
         Color.gray.opacity(0.1).frame(width: 40, height: 40).cornerRadius(8.0)
@@ -43,6 +44,14 @@ struct SocialFeedPostAuthorView: View {
       if let lastName = existingRecord.value(forKey: "lastName") as? String {
         self.lastName = lastName
       }
+
+      if let profilePicture = existingRecord.value(forKey: "profilePicture") as? CKAsset {
+        let fileURL = profilePicture.fileURL
+        if let fileURL {
+          self.profilePicture = fileURL
+        }
+      }
+
     }
   }
 
