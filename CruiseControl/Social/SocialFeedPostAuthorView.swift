@@ -14,7 +14,7 @@ struct SocialFeedPostAuthorView: View {
       AsyncImage(url: profilePicture) { image in
         image.resizable().frame(width: 40, height: 40).cornerRadius(8.0)
       } placeholder: {
-        Color.gray.opacity(0.1).frame(width: 40, height: 40).cornerRadius(8.0)
+        Color.gray.opacity(0.3).frame(width: 40, height: 40).cornerRadius(8.0)
       }
       VStack(alignment: .leading) {
         HStack {
