@@ -89,53 +89,60 @@ struct ProfileView: View {
           ).lineLimit(3, reservesSpace: true)
         }.redacted(reason: !viewModel.hasUserFetchBeenAttempted ? .placeholder : [])
 
-        Button {
-          var imageURL: URL? = nil
-          switch viewModel.imageState {
-          case .empty:
-            imageURL = nil
+      }.safeAreaInset(edge: .bottom) {
+        HStack {
+          Spacer()
+          Button {
+            var imageURL: URL? = nil
+            switch viewModel.imageState {
+            case .empty:
+              imageURL = nil
 
-          case .loading(_):
-            imageURL = nil
+            case .loading(_):
+              imageURL = nil
 
-          case .success(let data):
-            let uiImage = UIImage(data: data)
-            if let jpegData = uiImage?.jpegData(compressionQuality: 1.0) {
-              let tempFilePath = NSTemporaryDirectory()
-                .appending(UUID().uuidString)
-                .appending(".jpg")
+            case .success(let data):
+              let uiImage = UIImage(data: data)
+              if let jpegData = uiImage?.jpegData(compressionQuality: 1.0) {
+                let tempFilePath = NSTemporaryDirectory()
+                  .appending(UUID().uuidString)
+                  .appending(".jpg")
 
-              let tempFileURL = URL(fileURLWithPath: tempFilePath)
-              do {
-                try jpegData.write(to: tempFileURL)
-                imageURL = tempFileURL
-              } catch {
-                print("Error writing image to disk: \(error.localizedDescription)")
+                let tempFileURL = URL(fileURLWithPath: tempFilePath)
+                do {
+                  try jpegData.write(to: tempFileURL)
+                  imageURL = tempFileURL
+                } catch {
+                  print("Error writing image to disk: \(error.localizedDescription)")
+                }
               }
+
+            case .failure(_):
+              imageURL = nil
             }
 
-          case .failure(_):
-            imageURL = nil
-          }
-
-          let userProfile: UserProfile = UserProfile(
-            firstName: viewModel.firstName,
-            lastName: viewModel.lastName,
-            biography: viewModel.biography,
-            profilePicture: imageURL)
-          Task {
-            await userProfile.saveUserProfile()
-          }
-        } label: {
-          Text("Update profile")
-            .frame(maxWidth: .infinity)
-            .frame(height: 40)
-            .font(.title3)
-        }.buttonStyle(.borderedProminent)
-          .tint(.blue)
-          .backgroundStyle(.blue).redacted(
-            reason: !viewModel.hasUserFetchBeenAttempted ? .placeholder : [])
+            let userProfile: UserProfile = UserProfile(
+              firstName: viewModel.firstName,
+              lastName: viewModel.lastName,
+              biography: viewModel.biography,
+              profilePicture: imageURL)
+            Task {
+              await userProfile.saveUserProfile()
+            }
+          } label: {
+            Text("Update profile")
+              .frame(maxWidth: .infinity)
+              .frame(height: 40)
+              .font(.title3)
+          }.buttonStyle(.borderedProminent)
+            .tint(.blue)
+            .backgroundStyle(.blue).redacted(
+              reason: !viewModel.hasUserFetchBeenAttempted ? .placeholder : []
+            ).padding()
+          Spacer()
+        }
       }
+
     }.onAppear {
       Task {
         await viewModel.fetchUserProfile()
