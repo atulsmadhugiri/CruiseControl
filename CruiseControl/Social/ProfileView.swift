@@ -91,7 +91,6 @@ struct ProfileView: View {
 
       }.safeAreaInset(edge: .bottom) {
         HStack {
-          Spacer()
           Button {
             var imageURL: URL? = nil
             switch viewModel.imageState {
@@ -139,7 +138,6 @@ struct ProfileView: View {
             .backgroundStyle(.blue).redacted(
               reason: !viewModel.hasUserFetchBeenAttempted ? .placeholder : []
             ).padding()
-          Spacer()
         }
       }
 

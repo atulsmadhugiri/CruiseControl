@@ -36,7 +36,6 @@ struct RecordDrive: View {
       MapCompass()
     }.safeAreaInset(edge: .bottom) {
       HStack {
-        Spacer()
         Button {
           if !isTracking {
             withAnimation(.easeInOut) {
@@ -88,7 +87,6 @@ struct RecordDrive: View {
               .presentationDragIndicator(.visible)
               .tint(.green)
           }
-        Spacer()
       }.background(.thinMaterial)
     }
   }
