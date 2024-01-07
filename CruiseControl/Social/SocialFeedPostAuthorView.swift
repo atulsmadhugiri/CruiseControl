@@ -18,7 +18,7 @@ struct SocialFeedPostAuthorView: View {
       }
       VStack(alignment: .leading) {
         HStack {
-          Text("\(firstName ?? "Anonymous") \(lastName ?? "")")
+          Text("\(firstName ?? "Anonymous")\(lastName.map { " \($0)" } ?? "")")
           Image(systemName: "checkmark.seal.fill")
             .foregroundColor(.yellow)
             .frame(width: 12)
