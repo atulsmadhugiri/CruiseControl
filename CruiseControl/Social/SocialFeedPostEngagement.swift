@@ -4,7 +4,8 @@ struct SocialFeedPostEngagement: View {
   @State var liked: Bool = false
   @State var likeCount: Int = 2
   @State var bounceValue: Bool = false
-  let hapticFeedback = UIImpactFeedbackGenerator(style: .heavy)
+  let likeFeedback = UIImpactFeedbackGenerator(style: .heavy)
+  let unlikeFeedback = UIImpactFeedbackGenerator(style: .light)
 
   var body: some View {
     HStack {
@@ -12,7 +13,11 @@ struct SocialFeedPostEngagement: View {
         likeCount = liked ? likeCount - 1 : likeCount + 1
         bounceValue = !liked ? !bounceValue : bounceValue
         liked = !liked
-        hapticFeedback.impactOccurred()
+        if (liked) {
+          likeFeedback.impactOccurred()
+        } else {
+          unlikeFeedback.impactOccurred()
+        }
       } label: {
         Image(systemName: "heart.fill")
           .frame(height: 20)
@@ -31,7 +36,8 @@ struct SocialFeedPostEngagement: View {
         }.frame(maxWidth: .infinity)
       }.buttonStyle(.bordered).tint(.secondary)
     }.onAppear {
-      hapticFeedback.prepare()
+      likeFeedback.prepare()
+      unlikeFeedback.prepare()
     }
   }
 }
