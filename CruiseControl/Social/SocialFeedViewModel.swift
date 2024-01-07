@@ -7,6 +7,8 @@ class SocialFeedViewModel: ObservableObject {
   func fetchDrivePosts() async {
     let publicDB = CKContainer.default().publicCloudDatabase
     let query = CKQuery(recordType: "DrivePostAlpha", predicate: NSPredicate(value: true))
+    let sortDescriptor = NSSortDescriptor(key: "creationDate", ascending: false)
+    query.sortDescriptors = [sortDescriptor]
 
     do {
       let (matchResults, _) = try await publicDB.records(matching: query)
