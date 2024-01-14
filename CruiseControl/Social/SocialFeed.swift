@@ -13,6 +13,18 @@ struct SocialFeed: View {
           Text(drive.name).font(.title3).fontWeight(.semibold)
           Text(drive.description).font(.footnote)
 
+          HStack {
+            VStack {
+              Text(formattedDistanceTraveled(distance: drive.distanceTraveled))
+              Text("Distance Traveled").font(.caption2).textCase(.uppercase)
+            }
+            Spacer()
+            VStack {
+              Text(formatTimeInterval(interval: drive.endTime.timeIntervalSince(drive.startTime)))
+              Text("Time Elapsed").font(.caption2).textCase(.uppercase)
+            }
+          }.padding()
+
           Map(interactionModes: []) {
             MapPolyline(coordinates: drive.route)
               .stroke(
@@ -57,6 +69,14 @@ struct SocialFeed: View {
         await viewModel.fetchDrivePosts()
       }
     }
+  }
+
+  func formatTimeInterval(interval: TimeInterval) -> String {
+    let formatter = DateComponentsFormatter()
+    formatter.allowedUnits = [.hour, .minute, .second]
+    formatter.unitsStyle = .abbreviated
+    let formatted = formatter.string(from: interval) ?? ""
+    return formatted
   }
 }
 
