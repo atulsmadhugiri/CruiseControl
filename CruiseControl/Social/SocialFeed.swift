@@ -22,12 +22,18 @@ struct SocialFeed: View {
           HStack {
             VStack(alignment: .leading) {
               Text(formattedDistanceTraveled(distance: drive.distanceTraveled))
-              Text("Distance Traveled").font(.caption2).textCase(.uppercase)
+              Text("Distance Traveled")
+                .font(.caption2)
+                .textCase(.uppercase)
+                .foregroundStyle(.secondary)
             }
             Spacer()
             VStack(alignment: .trailing) {
               Text(formatTimeInterval(interval: drive.endTime.timeIntervalSince(drive.startTime)))
-              Text("Time Elapsed").font(.caption2).textCase(.uppercase)
+              Text("Time Elapsed")
+                .font(.caption2)
+                .textCase(.uppercase)
+                .foregroundStyle(.secondary)
             }
           }
 
