@@ -66,6 +66,10 @@ struct EditableProfilePicture: View {
 struct ProfileView: View {
   @StateObject var viewModel = ProfileViewModel()
 
+  @FocusState private var firstNameFocused: Bool
+  @FocusState private var lastNameFocused: Bool
+  @FocusState private var biographyFocused: Bool
+
   var body: some View {
     VStack {
       Form {
@@ -80,18 +84,27 @@ struct ProfileView: View {
 
         Section {
           TextField("First Name", text: $viewModel.firstName, prompt: Text("First Name"))
+            .focused($firstNameFocused)
+
           TextField("Last Name", text: $viewModel.lastName, prompt: Text("Last Name"))
+            .focused($lastNameFocused)
+
         }.redacted(reason: !viewModel.hasUserFetchBeenAttempted ? .placeholder : [])
 
         Section {
           TextField(
             "Biography", text: $viewModel.biography, prompt: Text("Biography"), axis: .vertical
           ).lineLimit(3, reservesSpace: true)
+            .focused($biographyFocused)
         }.redacted(reason: !viewModel.hasUserFetchBeenAttempted ? .placeholder : [])
 
       }.safeAreaInset(edge: .bottom) {
         HStack {
           Button {
+            firstNameFocused = false
+            lastNameFocused = false
+            biographyFocused = false
+
             var imageURL: URL? = nil
             switch viewModel.imageState {
             case .empty:
