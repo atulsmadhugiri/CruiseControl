@@ -152,7 +152,7 @@ struct ProfileView: View {
               reason: !viewModel.hasUserFetchBeenAttempted ? .placeholder : []
             ).padding()
         }
-      }
+      }.scrollDismissesKeyboard(.interactively)
 
     }.onAppear {
       Task {
