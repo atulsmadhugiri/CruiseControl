@@ -11,19 +11,25 @@ struct SocialFeed: View {
 
           SocialFeedPostAuthorView(creator: drive.creator, endTime: drive.endTime)
           Text(drive.name).font(.title3).fontWeight(.semibold)
-          Text(drive.description).font(.footnote)
+          if !drive.description.isEmpty {
+            Text(drive.description).font(.footnote)
+          }
+
+          // Extremely hacky way to get the spacing I want.
+          // TODO: Any other approach.
+          Text("").font(.footnote)
 
           HStack {
-            VStack {
+            VStack(alignment: .leading) {
               Text(formattedDistanceTraveled(distance: drive.distanceTraveled))
               Text("Distance Traveled").font(.caption2).textCase(.uppercase)
             }
             Spacer()
-            VStack {
+            VStack(alignment: .trailing) {
               Text(formatTimeInterval(interval: drive.endTime.timeIntervalSince(drive.startTime)))
               Text("Time Elapsed").font(.caption2).textCase(.uppercase)
             }
-          }.padding()
+          }
 
           Map(interactionModes: []) {
             MapPolyline(coordinates: drive.route)
