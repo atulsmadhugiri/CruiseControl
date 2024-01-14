@@ -7,7 +7,13 @@ final class AimlessDrivePerformanceTests: XCTestCase {
 
   override func setUp() {
     super.setUp()
-    aimlessDrive = AimlessDrive(name: "TestDrive", startTime: Date(), endTime: Date(), route: [])
+    aimlessDrive = AimlessDrive(
+      name: "TestDrive",
+      details: "Test Drive Details",
+      startTime: Date(),
+      endTime: Date(),
+      route: [],
+      distanceTraveled: CLLocationDistance())
     for _ in 0..<1000 {
       let randomCoordinate = CLLocationCoordinate2D(
         latitude: CLLocationDegrees.random(in: -90...90),
@@ -24,7 +30,7 @@ final class AimlessDrivePerformanceTests: XCTestCase {
 
   func testDistanceTraveledPerformance() {
     measure(options: performanceOptions) {
-      _ = self.aimlessDrive.distanceTraveled()
+      _ = self.aimlessDrive.distanceTraveled
     }
   }
 }
