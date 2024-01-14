@@ -8,6 +8,8 @@ struct SocialFeedPostAuthorView: View {
   @State var lastName: String?
   @State var profilePicture: URL?
 
+  @State var hasUserFetchBeenAttempted: Bool = false
+
   var body: some View {
 
     HStack {
@@ -20,6 +22,7 @@ struct SocialFeedPostAuthorView: View {
         HStack {
           Text("\(firstName ?? "Anonymous")\(lastName.map { " \($0)" } ?? "")")
             .lineLimit(1)
+            .redacted(reason: !hasUserFetchBeenAttempted ? .placeholder : [])
           Image(systemName: "checkmark.seal.fill")
             .foregroundColor(.yellow)
             .frame(width: 12)
@@ -36,7 +39,10 @@ struct SocialFeedPostAuthorView: View {
   }
 
   func fetchAuthorProfile() async {
-    guard let creator else { return }
+    guard let creator else {
+      self.hasUserFetchBeenAttempted = true
+      return
+    }
     let existingRecord = await potentiallyGetUserProfileRecord(userRecordID: creator)
     if let existingRecord {
       if let firstName = existingRecord.value(forKey: "firstName") as? String {
@@ -52,8 +58,8 @@ struct SocialFeedPostAuthorView: View {
           self.profilePicture = fileURL
         }
       }
-
     }
+    self.hasUserFetchBeenAttempted = true
   }
 
 }
