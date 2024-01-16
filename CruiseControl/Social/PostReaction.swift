@@ -28,3 +28,18 @@ extension PostReaction {
     return record
   }
 }
+
+extension PostReaction {
+  init?(from record: CKRecord) {
+    guard let drivePostRef = record["drivePostRef"] as? CKRecord.Reference,
+      let liked = record["liked"] as? Bool
+    else {
+      return nil
+    }
+
+    self.init(
+      drivePostID: drivePostRef.recordID,
+      liked: liked,
+      recordID: record.recordID)
+  }
+}
