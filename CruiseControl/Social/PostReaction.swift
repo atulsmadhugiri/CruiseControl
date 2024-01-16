@@ -43,3 +43,16 @@ extension PostReaction {
       recordID: record.recordID)
   }
 }
+
+extension PostReaction {
+  func saveReaction() async {
+    do {
+      let record = self.toCKRecord()
+      let publicDB = CKContainer.default().publicCloudDatabase
+      let _ = try await publicDB.save(record)
+      print("PostReaction saved successfully!")
+    } catch {
+      print("Error saving PostReaction: \(error.localizedDescription)")
+    }
+  }
+}
