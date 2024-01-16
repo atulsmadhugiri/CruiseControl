@@ -71,7 +71,7 @@ struct SocialFeed: View {
             .cornerRadius(8.0)
             .shadow(radius: 1.0)
 
-          SocialFeedPostEngagement()
+          SocialFeedPostEngagement(drivePostID: drive.recordID)
 
         }
 

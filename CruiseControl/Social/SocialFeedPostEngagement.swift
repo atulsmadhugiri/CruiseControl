@@ -1,6 +1,8 @@
+import CloudKit
 import SwiftUI
 
 struct SocialFeedPostEngagement: View {
+  var drivePostID: CKRecord.ID?
   @State var liked: Bool = false
   @State var likeCount: Int = 2
   @State var bounceValue: Bool = false
@@ -10,10 +12,18 @@ struct SocialFeedPostEngagement: View {
   var body: some View {
     HStack {
       Button {
+
+        if let drivePostID {
+          let reaction: PostReaction = PostReaction(drivePostID: drivePostID, liked: !liked)
+          Task {
+            await reaction.saveReaction()
+          }
+        }
+
         likeCount = liked ? likeCount - 1 : likeCount + 1
         bounceValue = !liked ? !bounceValue : bounceValue
         liked = !liked
-        if (liked) {
+        if liked {
           likeFeedback.impactOccurred()
         } else {
           unlikeFeedback.impactOccurred()
