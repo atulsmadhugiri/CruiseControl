@@ -16,8 +16,8 @@ struct SocialFeedPostAuthorView: View {
       AsyncImage(url: profilePicture) { image in
         image.resizable()
           .frame(width: 40, height: 40)
-          .cornerRadius(8.0).transition(.opacity.animation(.easeIn))
-          .transition(.opacity.animation(.snappy))
+          .cornerRadius(8.0)
+          .transition(.opacity.animation(.easeIn))
       } placeholder: {
         Color.gray.opacity(0.3).frame(width: 40, height: 40).cornerRadius(8.0)
       }
@@ -26,13 +26,13 @@ struct SocialFeedPostAuthorView: View {
           Text("\(firstName ?? "FirstNameLastName")\(lastName.map { " \($0)" } ?? "")")
             .lineLimit(1)
             .redacted(reason: !hasUserFetchBeenAttempted ? .placeholder : [])
-            .animation(.snappy, value: hasUserFetchBeenAttempted)
+            .animation(.easeIn, value: hasUserFetchBeenAttempted)
 
           Image(systemName: "checkmark.seal.fill")
             .foregroundColor(.yellow)
             .frame(width: 12)
             .font(.system(size: 14))
-            .animation(.snappy) { content in
+            .animation(.easeIn) { content in
               content.opacity(hasUserFetchBeenAttempted ? 1.0 : 0)
             }
 
