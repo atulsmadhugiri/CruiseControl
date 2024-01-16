@@ -26,7 +26,6 @@ struct SocialFeedPostAuthorView: View {
           Text("\(firstName ?? "FirstNameLastName")\(lastName.map { " \($0)" } ?? "")")
             .lineLimit(1)
             .redacted(reason: !hasUserFetchBeenAttempted ? .placeholder : [])
-            .animation(.easeIn, value: hasUserFetchBeenAttempted)
 
           Image(systemName: "checkmark.seal.fill")
             .foregroundColor(.yellow)
