@@ -14,19 +14,28 @@ struct SocialFeedPostAuthorView: View {
 
     HStack {
       AsyncImage(url: profilePicture) { image in
-        image.resizable().frame(width: 40, height: 40).cornerRadius(8.0)
+        image.resizable()
+          .frame(width: 40, height: 40)
+          .cornerRadius(8.0).transition(.opacity.animation(.easeIn))
+          .transition(.opacity.animation(.snappy))
       } placeholder: {
         Color.gray.opacity(0.3).frame(width: 40, height: 40).cornerRadius(8.0)
       }
       VStack(alignment: .leading) {
         HStack {
-          Text("\(firstName ?? "Anonymous")\(lastName.map { " \($0)" } ?? "")")
+          Text("\(firstName ?? "FirstNameLastName")\(lastName.map { " \($0)" } ?? "")")
             .lineLimit(1)
             .redacted(reason: !hasUserFetchBeenAttempted ? .placeholder : [])
+            .animation(.snappy, value: hasUserFetchBeenAttempted)
+
           Image(systemName: "checkmark.seal.fill")
             .foregroundColor(.yellow)
             .frame(width: 12)
             .font(.system(size: 14))
+            .animation(.snappy) { content in
+              content.opacity(hasUserFetchBeenAttempted ? 1.0 : 0)
+            }
+
         }
         Text(endTime.formatted(date: .abbreviated, time: .shortened))
           .font(.system(size: 12, design: .rounded))
