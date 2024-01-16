@@ -16,3 +16,15 @@ struct PostReaction {
     self.recordID = recordID
   }
 }
+
+extension PostReaction {
+  func toCKRecord() -> CKRecord {
+    let record =
+      recordID != nil
+      ? CKRecord(recordType: "PostReactionAlpha", recordID: recordID!)
+      : CKRecord(recordType: "PostReactionAlpha")
+    record["drivePostRef"] = drivePostRef
+    record["liked"] = liked
+    return record
+  }
+}
