@@ -22,9 +22,11 @@ struct SocialFeedPostAuthorView: View {
       }
       VStack(alignment: .leading) {
         HStack {
-          Text("\(firstName ?? "FirstNameLastName")\(lastName.map { " \($0)" } ?? "")")
-            .lineLimit(1)
-            .redacted(reason: !hasUserFetchBeenAttempted ? .placeholder : [])
+          Text(
+            "\(firstName ?? "FirstNameLastName")\(lastName.map { $0 != "" ? " \($0)" : "" } ?? "")"
+          )
+          .lineLimit(1)
+          .redacted(reason: !hasUserFetchBeenAttempted ? .placeholder : [])
 
           Image(systemName: "checkmark.seal.fill")
             .foregroundColor(.yellow)
