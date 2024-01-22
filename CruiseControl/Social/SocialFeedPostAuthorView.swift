@@ -17,7 +17,6 @@ struct SocialFeedPostAuthorView: View {
         image.resizable()
           .frame(width: 40, height: 40)
           .cornerRadius(8.0)
-          .transition(.opacity.animation(.easeIn))
       } placeholder: {
         Color.gray.opacity(0.3).frame(width: 40, height: 40).cornerRadius(8.0)
       }
@@ -31,9 +30,6 @@ struct SocialFeedPostAuthorView: View {
             .foregroundColor(.yellow)
             .frame(width: 12)
             .font(.system(size: 14))
-            .animation(.easeIn) { content in
-              content.opacity(hasUserFetchBeenAttempted ? 1.0 : 0)
-            }
 
         }
         Text(endTime.formatted(date: .abbreviated, time: .shortened))
