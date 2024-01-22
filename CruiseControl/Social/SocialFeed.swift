@@ -81,9 +81,7 @@ struct SocialFeed: View {
         await viewModel.fetchDrivePosts()
       }
     }.refreshable {
-      Task {
-        await viewModel.fetchDrivePosts()
-      }
+      await viewModel.fetchDrivePosts()
     }
   }
 
