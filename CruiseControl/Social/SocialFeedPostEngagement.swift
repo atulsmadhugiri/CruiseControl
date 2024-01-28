@@ -48,8 +48,45 @@ struct SocialFeedPostEngagement: View {
     }.onAppear {
       likeFeedback.prepare()
       unlikeFeedback.prepare()
+      Task {
+        await fetchPostReactions()
+      }
     }
   }
+
+  func fetchPostReactions() async {
+    guard let drivePostID else {
+      return
+    }
+
+    do {
+      let publicDB = CKContainer.default().publicCloudDatabase
+      let reference = CKRecord.Reference(recordID: drivePostID, action: .none)
+      let predicate = NSPredicate(format: "drivePostRef == %@", reference)
+      let sortDescriptor = NSSortDescriptor(key: "creationDate", ascending: false)
+
+      let query = CKQuery(recordType: "PostReactionAlpha", predicate: predicate)
+      query.sortDescriptors = [sortDescriptor]
+
+      let (matchResults, _) = try await publicDB.records(matching: query)
+      var postReactions: [PostReaction] = []
+
+      for (_, recordResult) in matchResults {
+        switch recordResult {
+        case .success(let record):
+          if let postReaction = PostReaction(from: record) {
+            postReactions.append(postReaction)
+          }
+        case .failure(let error):
+          print("Error fetching PostReaction record: \(error.localizedDescription)")
+        }
+      }
+    } catch {
+      print("Error potentially fetching PostReactions: \(error.localizedDescription)")
+      return
+    }
+  }
+
 }
 
 #Preview {
