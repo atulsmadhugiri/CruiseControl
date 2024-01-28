@@ -16,6 +16,7 @@ struct PostReaction {
     self.drivePostRef = CKRecord.Reference(recordID: drivePostID, action: .none)
     self.liked = liked
     self.recordID = recordID
+    self.creator = creator
   }
 }
 
