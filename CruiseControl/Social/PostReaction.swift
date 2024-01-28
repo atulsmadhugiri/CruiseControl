@@ -5,11 +5,13 @@ struct PostReaction {
   var drivePostRef: CKRecord.Reference
   var liked: Bool
   var recordID: CKRecord.ID?
+  var creator: CKRecord.ID?
 
   init(
     drivePostID: CKRecord.ID,
     liked: Bool,
-    recordID: CKRecord.ID? = nil
+    recordID: CKRecord.ID? = nil,
+    creator: CKRecord.ID? = nil
   ) {
     self.drivePostRef = CKRecord.Reference(recordID: drivePostID, action: .none)
     self.liked = liked
@@ -40,7 +42,8 @@ extension PostReaction {
     self.init(
       drivePostID: drivePostRef.recordID,
       liked: liked,
-      recordID: record.recordID)
+      recordID: record.recordID,
+      creator: record.creatorUserRecordID)
   }
 }
 
