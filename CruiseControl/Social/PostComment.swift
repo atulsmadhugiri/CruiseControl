@@ -31,3 +31,19 @@ extension PostComment {
     return record
   }
 }
+
+extension PostComment {
+  init?(from record: CKRecord) {
+    guard let drivePostRef = record["drivePostRef"] as? CKRecord.Reference,
+      let content = record["content"] as? String
+    else {
+      return nil
+    }
+
+    self.init(
+      drivePostID: drivePostRef.recordID,
+      content: content,
+      recordID: record.recordID,
+      creator: record.creatorUserRecordID)
+  }
+}
