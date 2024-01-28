@@ -4,7 +4,7 @@ import SwiftUI
 struct SocialFeedPostEngagement: View {
   var drivePostID: CKRecord.ID?
   @State var liked: Bool = false
-  @State var likeCount: Int = 2
+  @State var likeCount: Int = 0
   @State var bounceValue: Bool = false
   let likeFeedback = UIImpactFeedbackGenerator(style: .heavy)
   let unlikeFeedback = UIImpactFeedbackGenerator(style: .light)
@@ -81,6 +81,10 @@ struct SocialFeedPostEngagement: View {
           print("Error fetching PostReaction record: \(error.localizedDescription)")
         }
       }
+
+      let uniqueReactions = PostReaction.computeUniqueReactions(unfilteredReactions: postReactions)
+      self.likeCount = uniqueReactions
+
     } catch {
       print("Error potentially fetching PostReactions: \(error.localizedDescription)")
       return
