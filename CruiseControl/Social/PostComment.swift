@@ -19,3 +19,15 @@ struct PostComment {
     self.creator = creator
   }
 }
+
+extension PostComment {
+  func toCKRecord() -> CKRecord {
+    let record =
+      recordID != nil
+      ? CKRecord(recordType: "PostCommentAlpha", recordID: recordID!)
+      : CKRecord(recordType: "PostCommentAlpha")
+    record["drivePostRef"] = drivePostRef
+    record["content"] = content
+    return record
+  }
+}
