@@ -82,6 +82,15 @@ struct SocialFeedPostEngagement: View {
         }
       }
 
+      // TODO: This is extremely hacky and inefficient.
+      // Will get the UI right and then handle this properly.
+      let currentUserRecord = await potentiallyGetCurrentUserProfileRecord()
+      let currentUserRecordID = currentUserRecord?.creatorUserRecordID
+      let currentUserReaction = postReactions.first(where: { $0.creator == currentUserRecordID })
+      if let currentUserReaction {
+        self.liked = currentUserReaction.liked
+      }
+
       let uniqueReactions = PostReaction.computeUniqueReactions(unfilteredReactions: postReactions)
       self.likeCount = uniqueReactions
 
