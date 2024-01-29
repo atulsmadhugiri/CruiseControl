@@ -6,6 +6,8 @@ struct SocialFeedPostEngagement: View {
   @State var liked: Bool = false
   @State var likeCount: Int = 0
   @State var bounceValue: Bool = false
+  @State var showingCommentSheet: Bool = false
+
   let likeFeedback = UIImpactFeedbackGenerator(style: .heavy)
   let unlikeFeedback = UIImpactFeedbackGenerator(style: .light)
 
@@ -38,13 +40,19 @@ struct SocialFeedPostEngagement: View {
           .contentTransition(.numericText(countsDown: liked))
       }.buttonStyle(.bordered).tint(liked ? .pink : .secondary)
       Button {
-        print("UNIMPLEMENTED")
+        showingCommentSheet = true
       } label: {
         HStack {
           Image(systemName: "bubble.fill").frame(height: 20)
           Text("Comment")
         }.frame(maxWidth: .infinity)
       }.buttonStyle(.bordered).tint(.secondary)
+        .sheet(isPresented: $showingCommentSheet) {
+          SocialFeedCommentSheet()
+            .presentationDetents([.medium, .large])
+            .presentationDragIndicator(.visible)
+        }
+
     }.onAppear {
       likeFeedback.prepare()
       unlikeFeedback.prepare()
