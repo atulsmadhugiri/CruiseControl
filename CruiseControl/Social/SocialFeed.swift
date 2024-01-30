@@ -12,7 +12,7 @@ struct SocialFeed: View {
           SocialFeedPostAuthorView(creator: drive.creator, endTime: drive.endTime)
           Text(drive.name).font(.title3).fontWeight(.semibold)
           if !drive.description.isEmpty {
-            Text(drive.description).font(.footnote)
+            Text(potentiallyRenderMarkdown(string: drive.description)).font(.footnote)
           }
 
           // Extremely hacky way to get the spacing I want.
@@ -91,6 +91,14 @@ struct SocialFeed: View {
     formatter.unitsStyle = .abbreviated
     let formatted = formatter.string(from: interval) ?? ""
     return formatted
+  }
+
+  func potentiallyRenderMarkdown(string: String) -> AttributedString {
+    do {
+      return try AttributedString(markdown: string)
+    } catch {
+      return AttributedString(stringLiteral: string)
+    }
   }
 }
 
