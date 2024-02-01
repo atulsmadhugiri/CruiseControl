@@ -14,8 +14,6 @@
 		B72FD0EF2B342E170061B368 /* LocationFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72FD0EE2B342E170061B368 /* LocationFetcher.swift */; };
 		B72FD0F12B3432D00061B368 /* RecordDrive.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72FD0F02B3432D00061B368 /* RecordDrive.swift */; };
 		B72FD0F32B3434020061B368 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72FD0F22B3434020061B368 /* RootView.swift */; };
-		B72FD0F72B3504400061B368 /* PlacemarkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72FD0F62B3504400061B368 /* PlacemarkData.swift */; };
-		B72FD0F92B3505B40061B368 /* CoordinatePlacemarkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72FD0F82B3505B40061B368 /* CoordinatePlacemarkData.swift */; };
 		B74F600E2B493F5300F07D51 /* SocialFeedPostAuthorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74F600D2B493F5300F07D51 /* SocialFeedPostAuthorView.swift */; };
 		B76A7F972B4A342500B620A3 /* SocialFeedPostEngagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76A7F962B4A342500B620A3 /* SocialFeedPostEngagement.swift */; };
 		B76EE7C42B67278E0097EADB /* SocialFeedCommentSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76EE7C32B67278E0097EADB /* SocialFeedCommentSheet.swift */; };
@@ -58,8 +56,6 @@
 		B72FD0EE2B342E170061B368 /* LocationFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFetcher.swift; sourceTree = "<group>"; };
 		B72FD0F02B3432D00061B368 /* RecordDrive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDrive.swift; sourceTree = "<group>"; };
 		B72FD0F22B3434020061B368 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
-		B72FD0F62B3504400061B368 /* PlacemarkData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarkData.swift; sourceTree = "<group>"; };
-		B72FD0F82B3505B40061B368 /* CoordinatePlacemarkData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatePlacemarkData.swift; sourceTree = "<group>"; };
 		B74F600D2B493F5300F07D51 /* SocialFeedPostAuthorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialFeedPostAuthorView.swift; sourceTree = "<group>"; };
 		B76A7F962B4A342500B620A3 /* SocialFeedPostEngagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialFeedPostEngagement.swift; sourceTree = "<group>"; };
 		B76EE7C32B67278E0097EADB /* SocialFeedCommentSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialFeedCommentSheet.swift; sourceTree = "<group>"; };
@@ -174,8 +170,6 @@
 				B78BAED12B384878005DFD44 /* AimlessDriveListCell.swift */,
 				B72FD0EA2B341EBC0061B368 /* AimlessDriveDetailView.swift */,
 				B72FD0EE2B342E170061B368 /* LocationFetcher.swift */,
-				B72FD0F62B3504400061B368 /* PlacemarkData.swift */,
-				B72FD0F82B3505B40061B368 /* CoordinatePlacemarkData.swift */,
 				B72FD0F02B3432D00061B368 /* RecordDrive.swift */,
 				B72FD0F22B3434020061B368 /* RootView.swift */,
 				B728BD092B381FC1008C39FC /* RouteUtils.swift */,
@@ -312,9 +306,7 @@
 				B7EB858F2B3707E300D050CD /* GasGuzzlerBadge.swift in Sources */,
 				9DCE276B2B383054008DCD85 /* AchievementsView.swift in Sources */,
 				B74F600E2B493F5300F07D51 /* SocialFeedPostAuthorView.swift in Sources */,
-				B72FD0F92B3505B40061B368 /* CoordinatePlacemarkData.swift in Sources */,
 				B798DA082B42979300566AE1 /* ProfileViewModel.swift in Sources */,
-				B72FD0F72B3504400061B368 /* PlacemarkData.swift in Sources */,
 				B76A7F972B4A342500B620A3 /* SocialFeedPostEngagement.swift in Sources */,
 				B72FD0EB2B341EBC0061B368 /* AimlessDriveDetailView.swift in Sources */,
 				9DCE276D2B384005008DCD85 /* SpeedRacerBadge.swift in Sources */,
