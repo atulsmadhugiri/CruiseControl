@@ -16,7 +16,7 @@ struct SocialFeedCommentSheet: View {
         Button {
         } label: {
           Image(systemName: "paperplane.fill").frame(height: 20)
-        }.buttonStyle(.bordered).tint(.secondary)
+        }.buttonStyle(.bordered).tint(comment.isEmpty ? .secondary : .blue)
       }.padding()
     }
   }
