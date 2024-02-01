@@ -104,9 +104,7 @@
 		B78CDE512B3D7C5C000FBE52 /* Social */ = {
 			isa = PBXGroup;
 			children = (
-				B78CDE522B3D7C6E000FBE52 /* DrivePost.swift */,
-				B7D54F212B5638B700CDA8CF /* PostReaction.swift */,
-				B798DA092B429B7C00566AE1 /* UserProfile.swift */,
+				B7F2FFC42B6C58F70088B4BC /* Models */,
 				B78CDE542B3D9822000FBE52 /* SocialFeed.swift */,
 				B76A7F962B4A342500B620A3 /* SocialFeedPostEngagement.swift */,
 				B76EE7C32B67278E0097EADB /* SocialFeedCommentSheet.swift */,
@@ -114,7 +112,6 @@
 				B78CDE562B3D990A000FBE52 /* SocialFeedViewModel.swift */,
 				B798D9FE2B415EAC00566AE1 /* ProfileView.swift */,
 				B798DA072B42979300566AE1 /* ProfileViewModel.swift */,
-				B7C56B6D2B6606E700F67421 /* PostComment.swift */,
 			);
 			path = Social;
 			sourceTree = "<group>";
@@ -136,6 +133,17 @@
 				B7EB85A42B38074D00D050CD /* CruiseControlTests.swift */,
 			);
 			path = CruiseControlTests;
+			sourceTree = "<group>";
+		};
+		B7F2FFC42B6C58F70088B4BC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B78CDE522B3D7C6E000FBE52 /* DrivePost.swift */,
+				B798DA092B429B7C00566AE1 /* UserProfile.swift */,
+				B7D54F212B5638B700CDA8CF /* PostReaction.swift */,
+				B7C56B6D2B6606E700F67421 /* PostComment.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		B7FFC32C2B34151500F0BC27 = {
