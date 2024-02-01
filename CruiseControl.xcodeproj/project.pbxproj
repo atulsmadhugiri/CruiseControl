@@ -32,6 +32,7 @@
 		B7EB85912B3708A700D050CD /* SlowPokeBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB85902B3708A700D050CD /* SlowPokeBadge.swift */; };
 		B7EB85A52B38074D00D050CD /* CruiseControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB85A42B38074D00D050CD /* CruiseControlTests.swift */; };
 		B7EB85AC2B3807D800D050CD /* AimlessDrive.swift in Sources */ = {isa = PBXBuildFile; fileRef = B771B0122B3415FC00C6623F /* AimlessDrive.swift */; };
+		B7F2FFC62B6C61810088B4BC /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7F2FFC52B6C61810088B4BC /* CommentCell.swift */; };
 		B7FFC3392B34151500F0BC27 /* CruiseControlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FFC3382B34151500F0BC27 /* CruiseControlApp.swift */; };
 		B7FFC33B2B34151500F0BC27 /* AimlessDriveList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FFC33A2B34151500F0BC27 /* AimlessDriveList.swift */; };
 		B7FFC33F2B34151600F0BC27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7FFC33E2B34151600F0BC27 /* Assets.xcassets */; };
@@ -74,6 +75,7 @@
 		B7EB85902B3708A700D050CD /* SlowPokeBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlowPokeBadge.swift; sourceTree = "<group>"; };
 		B7EB85A22B38074D00D050CD /* CruiseControlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CruiseControlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7EB85A42B38074D00D050CD /* CruiseControlTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CruiseControlTests.swift; sourceTree = "<group>"; };
+		B7F2FFC52B6C61810088B4BC /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		B7FFC3352B34151500F0BC27 /* CruiseControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CruiseControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7FFC3382B34151500F0BC27 /* CruiseControlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CruiseControlApp.swift; sourceTree = "<group>"; };
 		B7FFC33A2B34151500F0BC27 /* AimlessDriveList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AimlessDriveList.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				B7F2FFC42B6C58F70088B4BC /* Models */,
 				B78CDE542B3D9822000FBE52 /* SocialFeed.swift */,
 				B76A7F962B4A342500B620A3 /* SocialFeedPostEngagement.swift */,
+				B7F2FFC52B6C61810088B4BC /* CommentCell.swift */,
 				B76EE7C32B67278E0097EADB /* SocialFeedCommentSheet.swift */,
 				B74F600D2B493F5300F07D51 /* SocialFeedPostAuthorView.swift */,
 				B78CDE562B3D990A000FBE52 /* SocialFeedViewModel.swift */,
@@ -321,6 +324,7 @@
 				B72FD0EF2B342E170061B368 /* LocationFetcher.swift in Sources */,
 				B7C56B6E2B6606E700F67421 /* PostComment.swift in Sources */,
 				B7EB858A2B3702AF00D050CD /* EarlyBirdBadge.swift in Sources */,
+				B7F2FFC62B6C61810088B4BC /* CommentCell.swift in Sources */,
 				B7D54F222B5638B700CDA8CF /* PostReaction.swift in Sources */,
 				B771B0132B3415FC00C6623F /* AimlessDrive.swift in Sources */,
 				B76EE7C42B67278E0097EADB /* SocialFeedCommentSheet.swift in Sources */,
