@@ -40,6 +40,7 @@ struct SocialFeedPostEngagement: View {
           .contentTransition(.numericText(countsDown: liked))
       }.buttonStyle(.bordered).tint(liked ? .pink : .secondary)
       Button {
+        unlikeFeedback.impactOccurred()
         showingCommentSheet = true
       } label: {
         HStack {
