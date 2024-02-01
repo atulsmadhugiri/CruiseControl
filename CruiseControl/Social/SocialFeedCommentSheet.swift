@@ -7,8 +7,12 @@ struct SocialFeedCommentSheet: View {
 
   var body: some View {
     VStack {
-      Spacer()
-      HStack {
+      List {
+        CommentCell()
+        CommentCell()
+        CommentCell()
+        CommentCell()
+        CommentCell()
       }
     }.safeAreaInset(edge: .bottom) {
       HStack {
