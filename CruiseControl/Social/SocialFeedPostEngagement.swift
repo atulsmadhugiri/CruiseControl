@@ -50,7 +50,7 @@ struct SocialFeedPostEngagement: View {
       }.buttonStyle(.bordered).tint(.secondary)
         .sheet(isPresented: $showingCommentSheet) {
           SocialFeedCommentSheet()
-            .presentationDetents([.medium])
+            .presentationDetents([.medium, .large])
             .presentationDragIndicator(.visible)
         }
 
