@@ -13,7 +13,7 @@ struct SocialFeedCommentSheet: View {
         CommentCell()
         CommentCell()
         CommentCell()
-      }
+      }.padding(EdgeInsets(top: 24, leading: 0, bottom: 0, trailing: 0))
     }.safeAreaInset(edge: .bottom) {
       HStack {
         TextField("Write a comment...", text: $comment).frame(
@@ -24,7 +24,7 @@ struct SocialFeedCommentSheet: View {
         } label: {
           Image(systemName: "paperplane.fill").frame(height: 20)
         }.buttonStyle(.bordered).tint(comment.isEmpty ? .secondary : .blue)
-      }.padding()
+      }.padding().background(.thinMaterial)
     }.onAppear {
       commentFeedback.prepare()
     }
