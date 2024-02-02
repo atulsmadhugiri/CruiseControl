@@ -24,7 +24,9 @@ struct SocialFeedCommentSheet: View {
         } label: {
           Image(systemName: "paperplane.fill").frame(height: 20)
         }.buttonStyle(.bordered).tint(comment.isEmpty ? .secondary : .blue)
-      }.padding().background(.thinMaterial)
+      }.padding()
+        .frame(maxWidth: .infinity)
+        .background(.thinMaterial)
     }.onAppear {
       commentFeedback.prepare()
     }
