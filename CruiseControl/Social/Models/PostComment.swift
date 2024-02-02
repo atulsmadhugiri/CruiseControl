@@ -47,3 +47,16 @@ extension PostComment {
       creator: record.creatorUserRecordID)
   }
 }
+
+extension PostComment {
+  func saveComment() async {
+    do {
+      let record = self.toCKRecord()
+      let publicDB = CKContainer.default().publicCloudDatabase
+      let _ = try await publicDB.save(record)
+      print("PostComment saved successfully!")
+    } catch {
+      print("Error saving PostComment: \(error.localizedDescription)")
+    }
+  }
+}
