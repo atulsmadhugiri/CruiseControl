@@ -1,6 +1,8 @@
+import CloudKit
 import SwiftUI
 
 struct SocialFeedCommentSheet: View {
+  var drivePostID: CKRecord.ID?
   @State private var comment = ""
 
   let commentFeedback = UIImpactFeedbackGenerator(style: .heavy)

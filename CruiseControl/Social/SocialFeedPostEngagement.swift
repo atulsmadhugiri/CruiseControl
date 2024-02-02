@@ -49,7 +49,7 @@ struct SocialFeedPostEngagement: View {
         }.frame(maxWidth: .infinity)
       }.buttonStyle(.bordered).tint(.secondary)
         .sheet(isPresented: $showingCommentSheet) {
-          SocialFeedCommentSheet()
+          SocialFeedCommentSheet(drivePostID: drivePostID)
             .presentationDetents([.medium, .large])
             .presentationDragIndicator(.visible)
         }
