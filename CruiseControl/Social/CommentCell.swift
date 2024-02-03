@@ -15,7 +15,7 @@ struct CommentCell: View {
       VStack(alignment: .leading) {
         HStack {
           Text("Atul Madhugiri").lineLimit(1).font(.caption2).bold()
-          Text(Date().formatted()).font(.caption2).foregroundStyle(.secondary)
+          Text(postComment.createdAt.formatted()).font(.caption2).foregroundStyle(.secondary)
         }
         Text(postComment.content).font(.caption)
       }
