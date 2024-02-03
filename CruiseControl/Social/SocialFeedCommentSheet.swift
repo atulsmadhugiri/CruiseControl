@@ -23,6 +23,14 @@ struct SocialFeedCommentSheet: View {
         ).textFieldStyle(.roundedBorder)
         Button {
           commentFeedback.impactOccurred()
+
+          if let drivePostID {
+            let comment: PostComment = PostComment(drivePostID: drivePostID, content: comment)
+            Task {
+              await comment.saveComment()
+            }
+          }
+
         } label: {
           Image(systemName: "paperplane.fill").frame(height: 20)
         }.buttonStyle(.bordered).tint(comment.isEmpty ? .secondary : .blue)
