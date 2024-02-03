@@ -7,18 +7,21 @@ struct PostComment: Identifiable {
   var content: String
   var recordID: CKRecord.ID?
   var creator: CKRecord.ID?
+  var createdAt: Date
 
   init(
     drivePostID: CKRecord.ID,
     content: String,
     recordID: CKRecord.ID? = nil,
-    creator: CKRecord.ID? = nil
+    creator: CKRecord.ID? = nil,
+    createdAt: Date = Date()
   ) {
     self.id = UUID()
     self.drivePostRef = CKRecord.Reference(recordID: drivePostID, action: .none)
     self.content = content
     self.recordID = recordID
     self.creator = creator
+    self.createdAt = createdAt
   }
 }
 
@@ -46,7 +49,8 @@ extension PostComment {
       drivePostID: drivePostRef.recordID,
       content: content,
       recordID: record.recordID,
-      creator: record.creatorUserRecordID)
+      creator: record.creatorUserRecordID,
+      createdAt: record.creationDate ?? Date())
   }
 }
 
