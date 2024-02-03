@@ -21,7 +21,7 @@ struct SocialFeedCommentSheet: View {
           width: 300
         ).textFieldStyle(.roundedBorder)
         Button {
-          if (comment.isEmpty) {
+          if comment.isEmpty {
             return
           }
           commentFeedback.impactOccurred()
@@ -29,10 +29,15 @@ struct SocialFeedCommentSheet: View {
             Task {
               let currentUserRecord = await potentiallyGetCurrentUserProfileRecord()
               let currentUserRecordID = currentUserRecord?.creatorUserRecordID
-              let postComment: PostComment = PostComment(drivePostID: drivePostID, content: comment, creator: currentUserRecordID)
+              let postComment: PostComment = PostComment(
+                drivePostID: drivePostID,
+                content: comment,
+                creator: currentUserRecordID)
               comment = ""
               await postComment.saveComment()
-              postComments.append(postComment)
+              withAnimation {
+                postComments.append(postComment)
+              }
             }
           }
 
