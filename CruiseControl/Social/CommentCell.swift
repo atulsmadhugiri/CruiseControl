@@ -1,10 +1,17 @@
+import CloudKit
 import SwiftUI
 
 struct CommentCell: View {
   var postComment: PostComment
+
+  @State var firstName: String?
+  @State var lastName: String?
+  @State var profilePicture: URL?
+  @State var hasUserFetchBeenAttempted: Bool = false
+
   var body: some View {
     HStack(alignment: .top) {
-      AsyncImage(url: URL(string: "https://blob.sh/atul.png")) { image in
+      AsyncImage(url: profilePicture) { image in
         image.resizable()
           .frame(width: 40, height: 40)
           .cornerRadius(8.0)
@@ -14,11 +21,43 @@ struct CommentCell: View {
 
       VStack(alignment: .leading) {
         HStack {
-          Text("Atul Madhugiri").lineLimit(1).font(.caption2).bold()
+          Text(
+            "\(firstName ?? "FirstNameLastName")\(lastName.map { $0 != "" ? " \($0)" : "" } ?? "")"
+          ).lineLimit(1).font(.caption2).bold().redacted(
+            reason: !hasUserFetchBeenAttempted ? .placeholder : [])
           Text(postComment.createdAt.formatted()).font(.caption2).foregroundStyle(.secondary)
         }
         Text(postComment.content).font(.caption)
       }
+    }.onAppear {
+      Task {
+        await fetchAuthorProfile()
+      }
     }
   }
+
+  func fetchAuthorProfile() async {
+    guard let creator = postComment.creator else {
+      self.hasUserFetchBeenAttempted = true
+      return
+    }
+    let existingRecord = await potentiallyGetUserProfileRecord(userRecordID: creator)
+    if let existingRecord {
+      if let firstName = existingRecord.value(forKey: "firstName") as? String {
+        self.firstName = firstName
+      }
+      if let lastName = existingRecord.value(forKey: "lastName") as? String {
+        self.lastName = lastName
+      }
+
+      if let profilePicture = existingRecord.value(forKey: "profilePicture") as? CKAsset {
+        let fileURL = profilePicture.fileURL
+        if let fileURL {
+          self.profilePicture = fileURL
+        }
+      }
+    }
+    self.hasUserFetchBeenAttempted = true
+  }
+
 }
