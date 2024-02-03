@@ -113,8 +113,6 @@
 				B76EE7C32B67278E0097EADB /* SocialFeedCommentSheet.swift */,
 				B74F600D2B493F5300F07D51 /* SocialFeedPostAuthorView.swift */,
 				B78CDE562B3D990A000FBE52 /* SocialFeedViewModel.swift */,
-				B798D9FE2B415EAC00566AE1 /* ProfileView.swift */,
-				B798DA072B42979300566AE1 /* ProfileViewModel.swift */,
 			);
 			path = Social;
 			sourceTree = "<group>";
@@ -185,6 +183,8 @@
 				B72FD0F22B3434020061B368 /* RootView.swift */,
 				B728BD092B381FC1008C39FC /* RouteUtils.swift */,
 				9DCE276A2B383054008DCD85 /* AchievementsView.swift */,
+				B798D9FE2B415EAC00566AE1 /* ProfileView.swift */,
+				B798DA072B42979300566AE1 /* ProfileViewModel.swift */,
 				B78CDE512B3D7C5C000FBE52 /* Social */,
 			);
 			path = CruiseControl;
