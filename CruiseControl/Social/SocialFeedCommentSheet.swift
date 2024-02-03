@@ -26,9 +26,11 @@ struct SocialFeedCommentSheet: View {
           }
           commentFeedback.impactOccurred()
           if let drivePostID {
-            let postComment: PostComment = PostComment(drivePostID: drivePostID, content: comment)
-            comment = ""
             Task {
+              let currentUserRecord = await potentiallyGetCurrentUserProfileRecord()
+              let currentUserRecordID = currentUserRecord?.creatorUserRecordID
+              let postComment: PostComment = PostComment(drivePostID: drivePostID, content: comment, creator: currentUserRecordID)
+              comment = ""
               await postComment.saveComment()
               postComments.append(postComment)
             }
