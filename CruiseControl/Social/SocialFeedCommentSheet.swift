@@ -21,8 +21,10 @@ struct SocialFeedCommentSheet: View {
           width: 300
         ).textFieldStyle(.roundedBorder)
         Button {
+          if (comment.isEmpty) {
+            return
+          }
           commentFeedback.impactOccurred()
-
           if let drivePostID {
             let postComment: PostComment = PostComment(drivePostID: drivePostID, content: comment)
             comment = ""
