@@ -1,7 +1,8 @@
 import CloudKit
 import Foundation
 
-struct PostComment {
+struct PostComment: Identifiable {
+  let id: UUID
   var drivePostRef: CKRecord.Reference
   var content: String
   var recordID: CKRecord.ID?
@@ -13,6 +14,7 @@ struct PostComment {
     recordID: CKRecord.ID? = nil,
     creator: CKRecord.ID? = nil
   ) {
+    self.id = UUID()
     self.drivePostRef = CKRecord.Reference(recordID: drivePostID, action: .none)
     self.content = content
     self.recordID = recordID
