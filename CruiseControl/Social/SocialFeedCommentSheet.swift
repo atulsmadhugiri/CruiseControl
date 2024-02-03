@@ -11,11 +11,9 @@ struct SocialFeedCommentSheet: View {
   var body: some View {
     VStack {
       List {
-        CommentCell()
-        CommentCell()
-        CommentCell()
-        CommentCell()
-        CommentCell()
+        ForEach(postComments) { comment in
+          CommentCell(postComment: comment)
+        }
       }.padding(EdgeInsets(top: 18, leading: 0, bottom: 0, trailing: 0)).backgroundStyle(.blue)
     }.safeAreaInset(edge: .bottom) {
       HStack {
@@ -26,9 +24,11 @@ struct SocialFeedCommentSheet: View {
           commentFeedback.impactOccurred()
 
           if let drivePostID {
-            let comment: PostComment = PostComment(drivePostID: drivePostID, content: comment)
+            let postComment: PostComment = PostComment(drivePostID: drivePostID, content: comment)
+            comment = ""
             Task {
-              await comment.saveComment()
+              await postComment.saveComment()
+              postComments.append(postComment)
             }
           }
 

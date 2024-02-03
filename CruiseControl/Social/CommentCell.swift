@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct CommentCell: View {
+  var postComment: PostComment
   var body: some View {
     HStack(alignment: .top) {
       AsyncImage(url: URL(string: "https://blob.sh/atul.png")) { image in
@@ -16,14 +17,8 @@ struct CommentCell: View {
           Text("Atul Madhugiri").lineLimit(1).font(.caption2).bold()
           Text(Date().formatted()).font(.caption2).foregroundStyle(.secondary)
         }
-        Text(
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-        ).font(.caption)
+        Text(postComment.content).font(.caption)
       }
     }
   }
-}
-
-#Preview {
-  CommentCell()
 }
