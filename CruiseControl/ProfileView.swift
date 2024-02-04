@@ -86,9 +86,11 @@ struct ProfileView: View {
         Section {
           TextField("First Name", text: $viewModel.firstName, prompt: Text("First Name"))
             .focused($firstNameFocused)
+            .disabled(profileSaveInProgress)
 
           TextField("Last Name", text: $viewModel.lastName, prompt: Text("Last Name"))
             .focused($lastNameFocused)
+            .disabled(profileSaveInProgress)
 
         }.redacted(reason: !viewModel.hasUserFetchBeenAttempted ? .placeholder : [])
 
@@ -97,6 +99,7 @@ struct ProfileView: View {
             "Biography", text: $viewModel.biography, prompt: Text("Biography"), axis: .vertical
           ).lineLimit(3, reservesSpace: true)
             .focused($biographyFocused)
+            .disabled(profileSaveInProgress)
         }.redacted(reason: !viewModel.hasUserFetchBeenAttempted ? .placeholder : [])
 
       }.safeAreaInset(edge: .bottom) {
