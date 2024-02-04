@@ -105,6 +105,9 @@ struct ProfileView: View {
       }.safeAreaInset(edge: .bottom) {
         HStack {
           Button {
+            if profileSaveInProgress {
+              return
+            }
             profileSaveInProgress = true
             firstNameFocused = false
             lastNameFocused = false
@@ -148,10 +151,17 @@ struct ProfileView: View {
               profileSaveInProgress = false
             }
           } label: {
-            Text("Update profile")
-              .frame(maxWidth: .infinity)
+            if profileSaveInProgress {
+              ProgressView().progressViewStyle(CircularProgressViewStyle(tint: .white)).frame(
+                maxWidth: .infinity
+              )
               .frame(height: 40)
-              .font(.title3)
+            } else {
+              Text("Update profile")
+                .frame(maxWidth: .infinity)
+                .frame(height: 40)
+                .font(.title3)
+            }
           }.buttonStyle(.borderedProminent)
             .tint(.blue)
             .backgroundStyle(.blue).redacted(
