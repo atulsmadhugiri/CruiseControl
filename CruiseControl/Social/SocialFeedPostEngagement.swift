@@ -38,6 +38,7 @@ struct SocialFeedPostEngagement: View {
         Text("\(likeCount)")
           .foregroundColor(liked ? .pink : .none)
           .contentTransition(.numericText(countsDown: liked))
+          .monospacedDigit()
       }.buttonStyle(.bordered).tint(liked ? .pink : .secondary)
       Button {
         unlikeFeedback.impactOccurred()
