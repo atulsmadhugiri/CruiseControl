@@ -69,6 +69,7 @@ struct ProfileView: View {
   @FocusState private var firstNameFocused: Bool
   @FocusState private var lastNameFocused: Bool
   @FocusState private var biographyFocused: Bool
+  @State var profileSaveInProgress: Bool = false
 
   var body: some View {
     VStack {
@@ -101,6 +102,7 @@ struct ProfileView: View {
       }.safeAreaInset(edge: .bottom) {
         HStack {
           Button {
+            profileSaveInProgress = true
             firstNameFocused = false
             lastNameFocused = false
             biographyFocused = false
@@ -140,6 +142,7 @@ struct ProfileView: View {
               profilePicture: imageURL)
             Task {
               await userProfile.saveUserProfile()
+              profileSaveInProgress = false
             }
           } label: {
             Text("Update profile")
