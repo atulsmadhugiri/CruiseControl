@@ -42,12 +42,11 @@ struct AimlessDriveDetailView: View {
             await drivePost.saveDrivePost()
           }
         } label: {
-          Label("DEBUG: Publish to PublicDB", systemImage: "ladybug.fill")
+          Label("Post publicly", systemImage: "paperplane.fill")
             .frame(maxWidth: .infinity)
             .frame(height: 40)
-            .font(.system(size: 16.0, weight: .bold, design: .monospaced))
+            .font(.title3)
         }.buttonStyle(.borderedProminent)
-          .tint(.secondary)
           .padding()
         Spacer()
       }.background(.thinMaterial)
