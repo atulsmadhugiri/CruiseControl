@@ -4,6 +4,9 @@ import SwiftUI
 struct AimlessDriveDetailView: View {
   var aimlessDrive: AimlessDrive
   let stroke = StrokeStyle(lineWidth: 6, lineCap: .round, lineJoin: .round)
+
+  @State var publishInProgress: Bool = false
+
   var body: some View {
     Map {
       MapPolyline(coordinates: aimlessDrive.route).stroke(.blue, style: stroke)
@@ -30,6 +33,7 @@ struct AimlessDriveDetailView: View {
       HStack {
         Spacer()
         Button {
+          publishInProgress = true
           let drivePost: DrivePost = DrivePost(
             name: aimlessDrive.name,
             description: aimlessDrive.details,
@@ -40,13 +44,23 @@ struct AimlessDriveDetailView: View {
 
           Task {
             await drivePost.saveDrivePost()
+            publishInProgress = false
           }
         } label: {
-          Label("Post publicly", systemImage: "paperplane.fill")
-            .frame(maxWidth: .infinity)
+          if publishInProgress {
+            ProgressView().progressViewStyle(CircularProgressViewStyle()).frame(
+              maxWidth: .infinity
+            )
             .frame(height: 40)
-            .font(.title3)
+            .tint(.gray)
+          } else {
+            Label("Post publicly", systemImage: "paperplane.fill")
+              .frame(maxWidth: .infinity)
+              .frame(height: 40)
+              .font(.title3).foregroundStyle(.background)
+          }
         }.buttonStyle(.borderedProminent)
+          .tint(.primary)
           .padding()
         Spacer()
       }.background(.thinMaterial)
