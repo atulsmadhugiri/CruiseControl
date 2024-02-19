@@ -27,7 +27,7 @@ struct CommentCell: View {
             reason: !hasUserFetchBeenAttempted ? .placeholder : [])
           Text(postComment.createdAt.formatted()).font(.caption2).foregroundStyle(.secondary)
         }
-        Text(postComment.content).font(.caption)
+        Text(potentiallyRenderMarkdown(string: postComment.content)).font(.caption)
       }
     }.onAppear {
       Task {

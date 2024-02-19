@@ -92,17 +92,6 @@ struct SocialFeed: View {
     let formatted = formatter.string(from: interval) ?? ""
     return formatted
   }
-
-  func potentiallyRenderMarkdown(string: String) -> AttributedString {
-    do {
-      return try AttributedString(
-        markdown: string,
-        options: AttributedString.MarkdownParsingOptions(
-          interpretedSyntax: .inlineOnlyPreservingWhitespace))
-    } catch {
-      return AttributedString(stringLiteral: string)
-    }
-  }
 }
 
 #Preview {
