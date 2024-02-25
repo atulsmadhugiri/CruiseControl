@@ -8,6 +8,8 @@ struct SocialFeedPostEngagement: View {
   @State var bounceValue: Bool = false
   @State var showingCommentSheet: Bool = false
 
+  @Environment(\.currentUserID) var currentUserID: CKRecord.ID?
+
   let likeFeedback = UIImpactFeedbackGenerator(style: .heavy)
   let unlikeFeedback = UIImpactFeedbackGenerator(style: .light)
 
@@ -91,12 +93,7 @@ struct SocialFeedPostEngagement: View {
           print("Error fetching PostReaction record: \(error.localizedDescription)")
         }
       }
-
-      // TODO: This is extremely hacky and inefficient.
-      // Will get the UI right and then handle this properly.
-      let currentUserRecord = await potentiallyGetCurrentUserProfileRecord()
-      let currentUserRecordID = currentUserRecord?.creatorUserRecordID
-      let currentUserReaction = postReactions.first(where: { $0.creator == currentUserRecordID })
+      let currentUserReaction = postReactions.first(where: { $0.creator == currentUserID })
       if let currentUserReaction {
         self.liked = currentUserReaction.liked
       }

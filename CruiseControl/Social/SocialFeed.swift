@@ -77,11 +77,12 @@ struct SocialFeed: View {
       }
     }.listStyle(.plain).onAppear {
       Task {
+        await viewModel.fetchCurrentUserID()
         await viewModel.fetchDrivePosts()
       }
     }.refreshable {
       await viewModel.fetchDrivePosts()
-    }
+    }.environment(\.currentUserID, viewModel.currentUserID)
   }
 
   func formatTimeInterval(interval: TimeInterval) -> String {

@@ -2,6 +2,7 @@ import CloudKit
 
 class SocialFeedViewModel: ObservableObject {
   @Published var drivePosts: [DrivePost] = []
+  @Published var currentUserID: CKRecord.ID? = nil
 
   @MainActor
   func fetchDrivePosts() async {
@@ -30,4 +31,11 @@ class SocialFeedViewModel: ObservableObject {
       print("Error fetching records: \(error.localizedDescription)")
     }
   }
+
+  @MainActor
+  func fetchCurrentUserID() async {
+    let currentUserRecord: CKRecord? = await potentiallyGetCurrentUserProfileRecord()
+    self.currentUserID = currentUserRecord?.creatorUserRecordID
+  }
+
 }
