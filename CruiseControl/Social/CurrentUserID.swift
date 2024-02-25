@@ -1,11 +1,12 @@
+import CloudKit
 import SwiftUI
 
 private struct CurrentUserID: EnvironmentKey {
-  static let defaultValue: String? = nil
+  static let defaultValue: CKRecord.ID? = nil
 }
 
 extension EnvironmentValues {
-  var currentUserID: String? {
+  var currentUserID: CKRecord.ID? {
     get { self[CurrentUserID.self] }
     set { self[CurrentUserID.self] = newValue }
   }
