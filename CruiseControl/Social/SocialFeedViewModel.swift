@@ -13,16 +13,9 @@ class SocialFeedViewModel: ObservableObject {
 
     do {
       let (matchResults, _) = try await publicDB.records(matching: query)
-      var newPosts: [DrivePost] = []
-      for (_, recordResult) in matchResults {
-        switch recordResult {
-        case .success(let record):
-          if let post = DrivePost(from: record) {
-            newPosts.append(post)
-          }
-        case .failure(let error):
-          print("Error fetching record: \(error.localizedDescription)")
-        }
+      let newPosts: [DrivePost] = try matchResults.compactMap { (_, recordResult) in
+        let record = try recordResult.get()
+        return DrivePost(from: record)
       }
       if !newPosts.elementsEqual(drivePosts) {
         drivePosts = newPosts
