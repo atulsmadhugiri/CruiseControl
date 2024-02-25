@@ -28,6 +28,7 @@
 		B7ADBA8B2B83EE8E00EE161F /* SocialUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7ADBA8A2B83EE8E00EE161F /* SocialUtils.swift */; };
 		B7C56B6E2B6606E700F67421 /* PostComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C56B6D2B6606E700F67421 /* PostComment.swift */; };
 		B7D54F222B5638B700CDA8CF /* PostReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D54F212B5638B700CDA8CF /* PostReaction.swift */; };
+		B7E6BD432B8BE4FE00796927 /* CurrentUserID.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E6BD422B8BE4FE00796927 /* CurrentUserID.swift */; };
 		B7EB858A2B3702AF00D050CD /* EarlyBirdBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB85892B3702AF00D050CD /* EarlyBirdBadge.swift */; };
 		B7EB858F2B3707E300D050CD /* GasGuzzlerBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB858E2B3707E300D050CD /* GasGuzzlerBadge.swift */; };
 		B7EB85912B3708A700D050CD /* SlowPokeBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB85902B3708A700D050CD /* SlowPokeBadge.swift */; };
@@ -72,6 +73,7 @@
 		B7ADBA8A2B83EE8E00EE161F /* SocialUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialUtils.swift; sourceTree = "<group>"; };
 		B7C56B6D2B6606E700F67421 /* PostComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostComment.swift; sourceTree = "<group>"; };
 		B7D54F212B5638B700CDA8CF /* PostReaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostReaction.swift; sourceTree = "<group>"; };
+		B7E6BD422B8BE4FE00796927 /* CurrentUserID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserID.swift; sourceTree = "<group>"; };
 		B7EB85892B3702AF00D050CD /* EarlyBirdBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarlyBirdBadge.swift; sourceTree = "<group>"; };
 		B7EB858E2B3707E300D050CD /* GasGuzzlerBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasGuzzlerBadge.swift; sourceTree = "<group>"; };
 		B7EB85902B3708A700D050CD /* SlowPokeBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlowPokeBadge.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 		B78CDE512B3D7C5C000FBE52 /* Social */ = {
 			isa = PBXGroup;
 			children = (
+				B7E6BD422B8BE4FE00796927 /* CurrentUserID.swift */,
 				B7F2FFC42B6C58F70088B4BC /* Models */,
 				B78CDE542B3D9822000FBE52 /* SocialFeed.swift */,
 				B76A7F962B4A342500B620A3 /* SocialFeedPostEngagement.swift */,
@@ -335,6 +338,7 @@
 				B798D9FF2B415EAC00566AE1 /* ProfileView.swift in Sources */,
 				B72FD0F32B3434020061B368 /* RootView.swift in Sources */,
 				B7EB85912B3708A700D050CD /* SlowPokeBadge.swift in Sources */,
+				B7E6BD432B8BE4FE00796927 /* CurrentUserID.swift in Sources */,
 				B798DA0A2B429B7C00566AE1 /* UserProfile.swift in Sources */,
 				B78CDE572B3D990A000FBE52 /* SocialFeedViewModel.swift in Sources */,
 				B728BD0A2B381FC1008C39FC /* RouteUtils.swift in Sources */,
