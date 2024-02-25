@@ -69,7 +69,6 @@ struct SocialFeed: View {
           }.frame(height: 200)
             .allowsHitTesting(false)
             .cornerRadius(8.0)
-            .shadow(radius: 1.0)
 
           SocialFeedPostEngagement(drivePostID: drive.recordID)
 

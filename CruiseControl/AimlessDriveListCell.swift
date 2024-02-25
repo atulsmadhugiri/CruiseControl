@@ -18,7 +18,6 @@ struct AimlessDriveListCell: View {
       }.frame(width: 120, height: 90)
         .allowsHitTesting(false)
         .cornerRadius(8.0)
-        .shadow(radius: 1.0)
 
       VStack(alignment: .leading) {
         Text(drive.name).font(.system(size: 20, design: .rounded).weight(.bold))
