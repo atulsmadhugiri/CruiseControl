@@ -31,7 +31,6 @@ struct AimlessDriveDetailView: View {
       }
     }.safeAreaInset(edge: .bottom) {
       HStack {
-        Spacer()
         Button {
           publishInProgress = true
           let drivePost: DrivePost = DrivePost(
@@ -62,7 +61,6 @@ struct AimlessDriveDetailView: View {
         }.buttonStyle(.borderedProminent)
           .tint(.primary)
           .padding()
-        Spacer()
       }.background(.thinMaterial)
     }
   }
