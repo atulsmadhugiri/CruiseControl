@@ -17,7 +17,7 @@ struct SocialFeedCommentSheet: View {
       }.padding(EdgeInsets(top: 18, leading: 0, bottom: 0, trailing: 0)).backgroundStyle(.blue)
     }.safeAreaInset(edge: .bottom) {
       HStack {
-        TextField("Write a comment...", text: $comment).frame(
+        TextField("Write a comment...", text: $comment, axis: .vertical).frame(
           width: 300
         ).textFieldStyle(.roundedBorder)
         Button {
