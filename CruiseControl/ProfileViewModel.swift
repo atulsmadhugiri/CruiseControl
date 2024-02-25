@@ -19,7 +19,11 @@ struct TransferableProfileImage: Transferable {
 
   static var transferRepresentation: some TransferRepresentation {
     DataRepresentation(importedContentType: .image) { data in
-      return TransferableProfileImage(image: data)
+      if let jpegData = UIImage(data: data)?.jpegData(compressionQuality: 0.75) {
+        return TransferableProfileImage(image: jpegData)
+      } else {
+        return TransferableProfileImage(image: data)
+      }
     }
   }
 }
