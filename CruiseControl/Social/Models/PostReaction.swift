@@ -64,8 +64,7 @@ extension PostReaction {
 extension PostReaction {
   static func computeUniqueReactions(unfilteredReactions: [PostReaction]) -> Int {
     let uniqueReactions = Dictionary(grouping: unfilteredReactions, by: { $0.creator })
-      .compactMap { $1.first }
-      .filter { $0.liked }
+      .compactMap { $1.first(where: { $0.liked }) }
       .count
     return uniqueReactions
   }
