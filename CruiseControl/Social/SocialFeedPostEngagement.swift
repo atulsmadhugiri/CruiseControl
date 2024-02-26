@@ -71,27 +71,19 @@ struct SocialFeedPostEngagement: View {
       return
     }
 
+    let publicDB = CKContainer.default().publicCloudDatabase
+    let reference = CKRecord.Reference(recordID: drivePostID, action: .none)
+    let predicate = NSPredicate(format: "drivePostRef == %@", reference)
+    let sortDescriptor = NSSortDescriptor(key: "creationDate", ascending: false)
+
+    let query = CKQuery(recordType: "PostReactionAlpha", predicate: predicate)
+    query.sortDescriptors = [sortDescriptor]
+
     do {
-      let publicDB = CKContainer.default().publicCloudDatabase
-      let reference = CKRecord.Reference(recordID: drivePostID, action: .none)
-      let predicate = NSPredicate(format: "drivePostRef == %@", reference)
-      let sortDescriptor = NSSortDescriptor(key: "creationDate", ascending: false)
-
-      let query = CKQuery(recordType: "PostReactionAlpha", predicate: predicate)
-      query.sortDescriptors = [sortDescriptor]
-
       let (matchResults, _) = try await publicDB.records(matching: query)
-      var postReactions: [PostReaction] = []
-
-      for (_, recordResult) in matchResults {
-        switch recordResult {
-        case .success(let record):
-          if let postReaction = PostReaction(from: record) {
-            postReactions.append(postReaction)
-          }
-        case .failure(let error):
-          print("Error fetching PostReaction record: \(error.localizedDescription)")
-        }
+      let postReactions: [PostReaction] = try matchResults.compactMap { (_, recordResult) in
+        let record = try recordResult.get()
+        return PostReaction(from: record)
       }
       let currentUserReaction = postReactions.first(where: { $0.creator == currentUserID })
       if let currentUserReaction {
