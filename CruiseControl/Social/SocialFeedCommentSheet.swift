@@ -60,31 +60,20 @@ struct SocialFeedCommentSheet: View {
       return
     }
 
+    let publicDB = CKContainer.default().publicCloudDatabase
+    let reference = CKRecord.Reference(recordID: drivePostID, action: .none)
+    let predicate = NSPredicate(format: "drivePostRef == %@", reference)
+    let sortDescriptor = NSSortDescriptor(key: "creationDate", ascending: true)
+
+    let query = CKQuery(recordType: "PostCommentAlpha", predicate: predicate)
+    query.sortDescriptors = [sortDescriptor]
+
     do {
-      let publicDB = CKContainer.default().publicCloudDatabase
-      let reference = CKRecord.Reference(recordID: drivePostID, action: .none)
-      let predicate = NSPredicate(format: "drivePostRef == %@", reference)
-      let sortDescriptor = NSSortDescriptor(key: "creationDate", ascending: true)
-
-      let query = CKQuery(recordType: "PostCommentAlpha", predicate: predicate)
-      query.sortDescriptors = [sortDescriptor]
-
       let (matchResults, _) = try await publicDB.records(matching: query)
-      var fetchedComments: [PostComment] = []
-
-      for (_, recordResult) in matchResults {
-        switch recordResult {
-        case .success(let record):
-          if let postComment = PostComment(from: record) {
-            fetchedComments.append(postComment)
-          }
-        case .failure(let error):
-          print("Error fetching PostReaction record: \(error.localizedDescription)")
-        }
+      self.postComments = try matchResults.compactMap { (_, recordResult) in
+        let record = try recordResult.get()
+        return PostComment(from: record)
       }
-
-      self.postComments = fetchedComments
-
     } catch {
       print("Error potentially fetching PostComments: \(error.localizedDescription)")
     }
