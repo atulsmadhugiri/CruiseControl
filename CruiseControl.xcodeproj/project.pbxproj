@@ -29,6 +29,7 @@
 		B7C56B6E2B6606E700F67421 /* PostComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C56B6D2B6606E700F67421 /* PostComment.swift */; };
 		B7D54F222B5638B700CDA8CF /* PostReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D54F212B5638B700CDA8CF /* PostReaction.swift */; };
 		B7E6BD432B8BE4FE00796927 /* CurrentUserID.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E6BD422B8BE4FE00796927 /* CurrentUserID.swift */; };
+		B7E6BD462B8C62CF00796927 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = B7E6BD452B8C62CF00796927 /* Algorithms */; };
 		B7EB858A2B3702AF00D050CD /* EarlyBirdBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB85892B3702AF00D050CD /* EarlyBirdBadge.swift */; };
 		B7EB858F2B3707E300D050CD /* GasGuzzlerBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB858E2B3707E300D050CD /* GasGuzzlerBadge.swift */; };
 		B7EB85912B3708A700D050CD /* SlowPokeBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EB85902B3708A700D050CD /* SlowPokeBadge.swift */; };
@@ -101,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7E6BD462B8C62CF00796927 /* Algorithms in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +241,7 @@
 			);
 			name = CruiseControl;
 			packageProductDependencies = (
+				B7E6BD452B8C62CF00796927 /* Algorithms */,
 			);
 			productName = CruiseControl;
 			productReference = B7FFC3352B34151500F0BC27 /* CruiseControl.app */;
@@ -273,6 +276,7 @@
 			);
 			mainGroup = B7FFC32C2B34151500F0BC27;
 			packageReferences = (
+				B7E6BD442B8C62CF00796927 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
 			);
 			productRefGroup = B7FFC3362B34151500F0BC27 /* Products */;
 			projectDirPath = "";
@@ -619,6 +623,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B7E6BD442B8C62CF00796927 /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-algorithms.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B7E6BD452B8C62CF00796927 /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B7E6BD442B8C62CF00796927 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B7FFC32D2B34151500F0BC27 /* Project object */;
 }
