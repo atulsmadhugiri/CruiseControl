@@ -10,11 +10,18 @@ struct SocialFeedCommentSheet: View {
 
   var body: some View {
     VStack {
-      List {
-        ForEach(postComments) { comment in
-          CommentCell(postComment: comment)
-        }
-      }.padding(EdgeInsets(top: 18, leading: 0, bottom: 0, trailing: 0)).backgroundStyle(.blue)
+      if postComments.isEmpty {
+        ContentUnavailableView(
+          "No comments yet",
+          systemImage: "bubble",
+          description: Text("Be the first to comment on this drive."))
+      } else {
+        List {
+          ForEach(postComments) { comment in
+            CommentCell(postComment: comment)
+          }
+        }.padding(EdgeInsets(top: 18, leading: 0, bottom: 0, trailing: 0)).backgroundStyle(.blue)
+      }
     }.safeAreaInset(edge: .bottom) {
       HStack {
         TextField("Write a comment...", text: $comment, axis: .vertical).frame(
