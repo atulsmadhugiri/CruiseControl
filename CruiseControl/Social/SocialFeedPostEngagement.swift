@@ -63,6 +63,10 @@ struct SocialFeedPostEngagement: View {
       Task {
         await fetchPostReactions()
       }
+    }.onChange(of: currentUserID) {
+      Task {
+        await fetchPostReactions()
+      }
     }
   }
 

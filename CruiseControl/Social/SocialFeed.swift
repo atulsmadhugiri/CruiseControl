@@ -77,8 +77,8 @@ struct SocialFeed: View {
       }
     }.listStyle(.plain).onAppear {
       Task {
-        await viewModel.fetchCurrentUserID()
         await viewModel.fetchDrivePosts()
+        await viewModel.fetchCurrentUserID()
       }
     }.refreshable {
       await viewModel.fetchDrivePosts()
