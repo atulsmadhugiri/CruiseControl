@@ -25,6 +25,7 @@ struct CommentCell: View {
             "\(firstName ?? "FirstNameLastName")\(lastName.map { $0 != "" ? " \($0)" : "" } ?? "")"
           ).lineLimit(1).font(.caption2).bold().redacted(
             reason: !hasUserFetchBeenAttempted ? .placeholder : [])
+          Spacer()
           Text(postComment.createdAt.formatted()).font(.caption2).foregroundStyle(.secondary)
         }
         Text(potentiallyRenderMarkdown(string: postComment.content)).font(.caption)
