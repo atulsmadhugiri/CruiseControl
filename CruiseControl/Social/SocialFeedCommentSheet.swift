@@ -5,12 +5,13 @@ struct SocialFeedCommentSheet: View {
   var drivePostID: CKRecord.ID?
   @State var postComments: [PostComment] = []
   @State private var comment = ""
+  @State var hasCommentFetchBeenAttempted: Bool = false
 
   let commentFeedback = UIImpactFeedbackGenerator(style: .heavy)
 
   var body: some View {
     VStack {
-      if postComments.isEmpty {
+      if hasCommentFetchBeenAttempted && postComments.isEmpty {
         ContentUnavailableView(
           "No comments yet",
           systemImage: "bubble",
@@ -58,6 +59,7 @@ struct SocialFeedCommentSheet: View {
       commentFeedback.prepare()
       Task {
         await fetchPostComments()
+        self.hasCommentFetchBeenAttempted = true
       }
     }
   }
