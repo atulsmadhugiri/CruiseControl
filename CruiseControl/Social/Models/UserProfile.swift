@@ -113,3 +113,24 @@ extension UserProfile {
     }
   }
 }
+
+func fetchUserProfiles() async -> [UserProfile] {
+  let publicDB = CKContainer.default().publicCloudDatabase
+  let query = CKQuery(
+    recordType: "UserProfileAlpha",
+    predicate: NSPredicate(value: true)
+  )
+
+  do {
+    let (matchResults, _) = try await publicDB.records(matching: query)
+    let fetchedUserProfiles: [UserProfile] = try matchResults.compactMap {
+      (_, recordResult) in
+      let record = try recordResult.get()
+      return UserProfile(from: record)
+    }
+    return fetchedUserProfiles
+  } catch {
+    print("Error fetching record: \(error.localizedDescription)")
+    return []
+  }
+}
