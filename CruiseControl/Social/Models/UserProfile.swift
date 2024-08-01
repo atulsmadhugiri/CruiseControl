@@ -20,6 +20,24 @@ struct UserProfile {
 }
 
 extension UserProfile {
+  init?(from record: CKRecord) {
+    guard let firstName = record["firstName"] as? String,
+      let lastName = record["lastName"] as? String,
+      let biography = record["biography"] as? String,
+      let profilePicture = record["profilePicture"] as? CKAsset
+    else {
+      return nil
+    }
+
+    self.init(
+      firstName: firstName,
+      lastName: lastName,
+      biography: biography
+    )
+  }
+}
+
+extension UserProfile {
   func toCKRecord() -> CKRecord {
     let record = CKRecord(recordType: "UserProfileAlpha")
 
