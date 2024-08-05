@@ -1,6 +1,7 @@
 import CloudKit
 
 struct UserProfile {
+  var recordID: CKRecord.ID?
   var firstName: String
   var lastName: String
   var biography: String
@@ -24,7 +25,7 @@ extension UserProfile {
     guard let firstName = record["firstName"] as? String,
       let lastName = record["lastName"] as? String,
       let biography = record["biography"] as? String,
-      let profilePicture = record["profilePicture"] as? CKAsset
+      record["profilePicture"] as? CKAsset != nil
     else {
       return nil
     }
