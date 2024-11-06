@@ -538,6 +538,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CruiseControl/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Cruise Control";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "CruiseControl needs location data to plot drives.";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "CruiseControl needs location data to plot drives.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "CruiseControl needs location data to plot drives.";
@@ -574,6 +575,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CruiseControl/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Cruise Control";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "CruiseControl needs location data to plot drives.";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "CruiseControl needs location data to plot drives.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "CruiseControl needs location data to plot drives.";
