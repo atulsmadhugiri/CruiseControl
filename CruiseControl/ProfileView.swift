@@ -22,9 +22,10 @@ struct ProfilePictureContent: View {
 
     case .success(let image):
       if let uiImage = UIImage(data: image) {
-        Image(uiImage: uiImage).resizable().aspectRatio(contentMode: .fill).frame(
-          width: 100, height: 100
-        ).clipped()
+        Image(uiImage: uiImage).resizable().aspectRatio(contentMode: .fill)
+          .frame(
+            width: 100, height: 100
+          ).clipped()
       } else {
         ProgressView()
       }
@@ -47,12 +48,16 @@ struct EditableProfilePicture: View {
   @ObservedObject var viewModel: ProfileViewModel
 
   var body: some View {
-    ProfilePicture(imageState: viewModel.imageState).overlay(alignment: .bottomTrailing) {
+    let hasAttemptedFetch = viewModel.hasUserFetchBeenAttempted
+    ProfilePicture(imageState: viewModel.imageState).overlay(
+      alignment: .bottomTrailing
+    ) {
       PhotosPicker(
-        selection: $viewModel.imageSelection, matching: .all(of: [.images, .not(.livePhotos)]),
+        selection: $viewModel.imageSelection,
+        matching: .all(of: [.images, .not(.livePhotos)]),
         photoLibrary: .shared()
       ) {
-        if viewModel.hasUserFetchBeenAttempted {
+        if hasAttemptedFetch {
           Image(systemName: "pencil.circle.fill")
             .symbolRenderingMode(.multicolor)
             .font(.system(size: 30))
@@ -84,23 +89,30 @@ struct ProfileView: View {
         }
 
         Section {
-          TextField("First Name", text: $viewModel.firstName, prompt: Text("First Name"))
-            .focused($firstNameFocused)
-            .disabled(profileSaveInProgress)
+          TextField(
+            "First Name", text: $viewModel.firstName, prompt: Text("First Name")
+          )
+          .focused($firstNameFocused)
+          .disabled(profileSaveInProgress)
 
-          TextField("Last Name", text: $viewModel.lastName, prompt: Text("Last Name"))
-            .focused($lastNameFocused)
-            .disabled(profileSaveInProgress)
+          TextField(
+            "Last Name", text: $viewModel.lastName, prompt: Text("Last Name")
+          )
+          .focused($lastNameFocused)
+          .disabled(profileSaveInProgress)
 
-        }.redacted(reason: !viewModel.hasUserFetchBeenAttempted ? .placeholder : [])
+        }.redacted(
+          reason: !viewModel.hasUserFetchBeenAttempted ? .placeholder : [])
 
         Section {
           TextField(
-            "Biography", text: $viewModel.biography, prompt: Text("Biography"), axis: .vertical
+            "Biography", text: $viewModel.biography, prompt: Text("Biography"),
+            axis: .vertical
           ).lineLimit(3, reservesSpace: true)
             .focused($biographyFocused)
             .disabled(profileSaveInProgress)
-        }.redacted(reason: !viewModel.hasUserFetchBeenAttempted ? .placeholder : [])
+        }.redacted(
+          reason: !viewModel.hasUserFetchBeenAttempted ? .placeholder : [])
 
       }.safeAreaInset(edge: .bottom) {
         HStack {
@@ -133,7 +145,9 @@ struct ProfileView: View {
                   try jpegData.write(to: tempFileURL)
                   imageURL = tempFileURL
                 } catch {
-                  print("Error writing image to disk: \(error.localizedDescription)")
+                  print(
+                    "Error writing image to disk: \(error.localizedDescription)"
+                  )
                 }
               }
 
@@ -152,7 +166,9 @@ struct ProfileView: View {
             }
           } label: {
             if profileSaveInProgress {
-              ProgressView().progressViewStyle(CircularProgressViewStyle(tint: .white)).frame(
+              ProgressView().progressViewStyle(
+                CircularProgressViewStyle(tint: .white)
+              ).frame(
                 maxWidth: .infinity
               )
               .frame(height: 40)

@@ -19,7 +19,8 @@ struct TransferableProfileImage: Transferable {
 
   static var transferRepresentation: some TransferRepresentation {
     DataRepresentation(importedContentType: .image) { data in
-      if let jpegData = UIImage(data: data)?.jpegData(compressionQuality: 0.75) {
+      if let jpegData = UIImage(data: data)?.jpegData(compressionQuality: 0.75)
+      {
         return TransferableProfileImage(image: jpegData)
       } else {
         return TransferableProfileImage(image: data)
@@ -49,14 +50,12 @@ class ProfileViewModel: ObservableObject {
 
   @Published var hasUserFetchBeenAttempted: Bool = false
 
-  private func loadTransferable(from imageSelection: PhotosPickerItem) -> Progress {
-    return imageSelection.loadTransferable(type: TransferableProfileImage.self) { result in
-
+  private func loadTransferable(from imageSelection: PhotosPickerItem)
+    -> Progress
+  {
+    return imageSelection.loadTransferable(type: TransferableProfileImage.self)
+    { result in
       DispatchQueue.main.async {
-        guard imageSelection == self.imageSelection else {
-          print("Failed to get the selected item.")
-          return
-        }
         switch result {
         case .success(let profileImage?):
           self.imageState = .success(profileImage.image)
@@ -83,14 +82,17 @@ class ProfileViewModel: ObservableObject {
         self.biography = biography
       }
 
-      if let profilePicture = existingRecord.value(forKey: "profilePicture") as? CKAsset {
+      if let profilePicture = existingRecord.value(forKey: "profilePicture")
+        as? CKAsset
+      {
         let fileURL = profilePicture.fileURL
         if let fileURL {
           do {
             let fileData = try Data(contentsOf: fileURL)
             self.imageState = .success(fileData)
           } catch {
-            print("Error retrieving profilePicture: \(error.localizedDescription)")
+            print(
+              "Error retrieving profilePicture: \(error.localizedDescription)")
           }
         }
       }
