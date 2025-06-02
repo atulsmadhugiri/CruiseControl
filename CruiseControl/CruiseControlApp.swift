@@ -5,12 +5,23 @@ import SwiftUI
 struct CruiseControlApp: App {
   var sharedModelContainer: ModelContainer = {
     let schema = Schema([AimlessDrive.self])
-    let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
+
+    let persistentConfiguration = ModelConfiguration(
+      schema: schema,
+      isStoredInMemoryOnly: false)
 
     do {
-      return try ModelContainer(for: schema, configurations: [modelConfiguration])
+      return try ModelContainer(
+        for: schema,
+        configurations: [persistentConfiguration])
     } catch {
-      fatalError("Could not create ModelContainer: \(error)")
+      print("Could not create persistent ModelContainer: \(error). Falling back to in-memory store.")
+      let memoryConfiguration = ModelConfiguration(
+        schema: schema,
+        isStoredInMemoryOnly: true)
+      return try! ModelContainer(
+        for: schema,
+        configurations: [memoryConfiguration])
     }
   }()
 
